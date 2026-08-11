@@ -4,85 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>त्रिकोणमिति सम्पूर्ण फॉर्मूला शीट (JEE & Class 12th)</title>
+    
+    <!-- हिंदी के स्पष्ट और शुद्ध अक्षरों के लिए Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Cambria+Math&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --primary-color: #1a73e8;
-            --text-color: #202124;
-            --border-color: #dadce0;
-            --bg-light: #f8f9fa;
+            --primary-color: #0f172a; /* गहरा नीला/काला रंग (Study Vibe) */
+            --accent-color: #2563eb; /* हाईलाइट के लिए नीला रंग */
+            --text-color: #1e293b;
+            --border-color: #94a3b8;
+            --bg-light: #ffffff;
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Noto Sans Devanagari हिंदी को एकदम सही रेंडर करेगा */
+            font-family: 'Noto Sans Devanagari', 'Segoe UI', sans-serif;
             color: var(--text-color);
-            line-height: 1.5;
+            line-height: 1.6;
             margin: 0;
-
             padding: 20px;
-            background-color: #f0f2f5;
+            background-color: #f8fafc;
+            /* ग्राफ पेपर / स्टडी ग्रिड बैकग्राउंड */
+            background-image: 
+                linear-gradient(#e2e8f0 1px, transparent 1px), 
+                linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
+            background-size: 20px 20px;
         }
 
         .no-print-btn {
             display: block;
-            width: 200px;
-            margin: 0 auto 20px auto;
+            width: 220px;
+            margin: 0 auto 30px auto;
             padding: 12px 24px;
-            background-color: #28a745;
+            background-color: var(--primary-color);
             color: white;
             text-align: center;
             font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 8px;
+            font-weight: 700;
+            border: 2px solid var(--primary-color);
+            border-radius: 0; /* 0px Border Radius (Right Angle/Perpendicular) */
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: background 0.2s;
-
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+            transition: all 0.2s;
+            font-family: inherit;
         }
 
         .no-print-btn:hover {
-            background-color: #218838;
+            background-color: transparent;
+            color: var(--primary-color);
+            box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+            transform: translate(2px, 2px);
         }
 
         .sheet-container {
             max-width: 1000px;
             margin: 0 auto;
             background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 40px;
+            border: 2px solid var(--primary-color);
+            border-radius: 0; /* Right Angle */
+            box-shadow: 8px 8px 0px rgba(15, 23, 42, 0.1);
         }
 
         h1 {
             text-align: center;
-            color: #111;
+            color: var(--primary-color);
             margin-top: 0;
+            border-bottom: 4px solid var(--primary-color);
+            padding-bottom: 15px;
+            font-size: 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-            border-bottom: 3px solid var(--primary-color);
-            padding-bottom: 10px;
-            font-size: 28px;
+        .subtitle {
+            text-align: center;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            font-size: 18px;
+            background: #eff6ff;
+            display: inline-block;
+            padding: 5px 15px;
+            border: 1px solid var(--accent-color);
+            width: 100%;
+            box-sizing: border-box;
         }
 
         h2 {
             color: var(--primary-color);
-            border-bottom: 1.5px solid var(--border-color);
+            border-bottom: 2px solid var(--border-color);
             padding-bottom: 5px;
-            margin-top: 25px;
-            font-size: 20px;
+            margin-top: 35px;
+            font-size: 22px;
+            font-weight: 700;
         }
 
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 25px;
         }
-
 
         .card {
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 15px;
+            border-radius: 0; /* Right Angle */
+            padding: 20px;
             background-color: var(--bg-light);
+            box-shadow: 3px 3px 0px rgba(148, 163, 184, 0.2);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+            font-size: 18px;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 8px;
         }
 
         .diagram-container {
@@ -90,80 +131,81 @@
             justify-content: center;
             align-items: center;
             margin: 15px 0;
-            background: #fff;
-            border: 1px dashed #b0b3b8;
-            border-radius: 6px;
-            padding: 10px;
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 0; /* Right Angle */
+            padding: 15px;
         }
 
         table {
-
             width: 100%;
             border-collapse: collapse;
-            margin: 15px 0;
-            font-size: 14px;
+            margin: 20px 0;
+            font-size: 15px;
         }
 
         th, td {
-            border: 1px solid var(--border-color);
-            padding: 10px;
+            border: 1px solid var(--primary-color);
+            padding: 12px;
             text-align: left;
+            border-radius: 0;
         }
 
         th {
-            background-color: #e8f0fe;
-            color: #1a73e8;
+            background-color: var(--primary-color);
+            color: white;
             font-weight: 600;
+            text-align: center;
         }
 
-        tr:nth-child(even) {
-
-            background-color: #ffffff;
+        td {
+            text-align: center;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
+            font-size: 16px;
         }
 
-        .formula-list {
-            margin: 0;
-            padding-left: 20px;
-        }
-
-        .formula-list li {
-            margin-bottom: 8px;
-            font-size: 15px;
+        td:first-child {
+            font-weight: bold;
+            color: var(--accent-color);
         }
 
         .formula-block {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            font-size: 15px;
-            font-family: 'Cambria', 'Times New Roman', serif;
-
+            gap: 12px;
+            font-size: 16px;
+            font-family: 'Cambria Math', 'Times New Roman', serif;
         }
 
         .formula-item {
-            padding: 6px;
+            padding: 10px;
             background: #fff;
-            border-left: 3px solid var(--primary-color);
-            border-radius: 0 4px 4px 0;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-color);
+            border-radius: 0; /* Right Angle */
+            font-weight: 600;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
         }
 
+        /* Print Settings */
         @media print {
             body {
-                background-color: white;
+                background: white !important;
                 padding: 0;
             }
             .no-print-btn {
                 display: none;
             }
             .sheet-container {
-
                 box-shadow: none;
+                border: none;
                 padding: 0;
                 max-width: 100%;
             }
             .card {
-                background-color: white !important;
+                box-shadow: none;
                 break-inside: avoid;
             }
             h2 {
@@ -172,135 +214,140 @@
             tr {
                 break-inside: avoid;
             }
+            .formula-item {
+                border: 1px solid #000;
+                border-left: 3px solid #000;
+            }
+            th {
+                background-color: #e2e8f0;
+                color: #000;
+            }
         }
     </style>
 </head>
 <body>
 
-
     <button class="no-print-btn" onclick="window.print()">PDF डाउनलोड / प्रिंट करें</button>
 
     <div class="sheet-container">
-        <h1> त्रिकोणमिति सम्पूर्ण फॉर्मूला शीट</h1>
-        <p style="text-align: center; font-style: italic; color: #5f6368; margin-bottom: 25px;">कक्षा 12वीं बोर्ड और JEE (Main + Advanced) के लिए विशेष</p>
+        <h1>त्रिकोणमिति सम्पूर्ण सूत्र शीट</h1>
+        <div class="subtitle">कक्षा 12वीं बोर्ड एवं JEE (Main + Advanced) के लिए विशेष संकलन</div>
 
         <!-- Section 1 -->
-        <h2>1. त्रिकोणमितीय फलनों की परिभाषा (Definition of Trig Functions)</h2>
+        <h2>1. त्रिकोणमितीय फलनों की मूलभूत परिभाषा (Definition of Trig Functions)</h2>
         <div class="grid-2">
             <div class="card">
-                <h3>क) समकोण त्रिभुज परिभाषा</h3>
-                <p>यदि 0 &lt; &theta; &lt; &pi;/2 हो:</p>
+                <h3>क) समकोण त्रिभुज पर आधारित</h3>
+                <p style="font-family: 'Cambria Math'; margin-top: 0;">यदि 0 &lt; &theta; &lt; &pi;/2 हो:</p>
                 <div class="diagram-container">
                     <svg width="200" height="120" viewBox="0 0 200 120">
-                        <polygon points="30,20 30,100 170,100" fill="none" stroke="#202124" stroke-width="2"/>
-                        <rect x="30" y="90" width="10" height="10" fill="none" stroke="#202124" stroke-width="1"/>
-                        <text x="15" y="65" font-size="12">लंब (Opp)</text>
-                        <text x="80" y="115" font-size="12">आधार (Adj)</text>
-                        <text x="100" y="50" font-size="12">कर्ण (Hyp)</text>
-
-                        <path d="M 150,100 A 20,20 0 0 0 140,85" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
-                        <text x="130" y="95" font-size="12" fill="#1a73e8">&theta;</text>
+                        <polygon points="30,20 30,100 170,100" fill="none" stroke="#0f172a" stroke-width="2"/>
+                        <!-- Square Right Angle Symbol -->
+                        <rect x="30" y="85" width="15" height="15" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+                        <text x="5" y="65" font-size="13" font-weight="bold">लंब</text>
+                        <text x="80" y="118" font-size="13" font-weight="bold">आधार</text>
+                        <text x="100" y="50" font-size="13" font-weight="bold">कर्ण</text>
+                        <path d="M 140,100 A 30,30 0 0 0 125,80" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+                        <text x="115" y="95" font-size="14" fill="#2563eb" font-weight="bold">&theta;</text>
                     </svg>
                 </div>
                 <div class="formula-block" style="grid-template-columns: 1fr;">
-                    <div class="formula-item"><b>sin &theta;</b> = लंब / कर्ण</div>
-                    <div class="formula-item"><b>cos &theta;</b> = आधार / कर्ण</div>
-                    <div class="formula-item"><b>tan &theta;</b> = लंब / आधार</div>
-                    <div class="formula-item"><b>csc &theta;</b> = कर्ण / लंब</div>
-                    <div class="formula-item"><b>sec &theta;</b> = कर्ण / आधार</div>
-                    <div class="formula-item"><b>cot &theta;</b> = आधार / लंब</div>
+                    <div class="formula-item">sin &theta; = लंब / कर्ण</div>
+                    <div class="formula-item">cos &theta; = आधार / कर्ण</div>
+                    <div class="formula-item">tan &theta; = लंब / आधार</div>
+                    <div class="formula-item">csc &theta; = कर्ण / लंब</div>
+                    <div class="formula-item">sec &theta; = कर्ण / आधार</div>
+                    <div class="formula-item">cot &theta; = आधार / लंब</div>
                 </div>
             </div>
 
             <div class="card">
-                <h3>ख) इकाई वृत्त परिभाषा (Unit Circle)</h3>
-                <p>त्रिज्या r = 1 वाले वृत्त पर कोई बिंदु (x, y):</p>
+                <h3>ख) इकाई वृत्त पर आधारित (Unit Circle)</h3>
+                <p style="font-family: 'Cambria Math'; margin-top: 0;">त्रिज्या r = 1 वाले वृत्त पर कोई बिंदु (x, y):</p>
                 <div class="diagram-container">
                     <svg width="200" height="120" viewBox="0 0 200 140">
-
-                        <circle cx="100" cy="70" r="50" fill="none" stroke="#202124" stroke-width="1.5"/>
-                        <line x1="30" y1="70" x2="170" y2="70" stroke="#aaa" stroke-width="1"/>
-                        <line x1="100" y1="10" x2="100" y2="130" stroke="#aaa" stroke-width="1"/>
-                        <line x1="100" y1="70" x2="135" y2="35" stroke="#1a73e8" stroke-width="2"/>
-                        <circle cx="135" cy="35" r="3" fill="#1a73e8"/>
-                        <text x="140" y="35" font-size="12" font-weight="bold">(x, y)</text>
-                        <text x="110" y="55" font-size="11" fill="#1a73e8">r=1</text>
-                        <text x="160" y="82" font-size="11">X</text>
-                        <text x="105" y="20" font-size="11">Y</text>
+                        <circle cx="100" cy="70" r="50" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+                        <!-- Perpendicular Axes -->
+                        <line x1="30" y1="70" x2="170" y2="70" stroke="#94a3b8" stroke-width="1.5"/>
+                        <line x1="100" y1="10" x2="100" y2="130" stroke="#94a3b8" stroke-width="1.5"/>
+                        <line x1="100" y1="70" x2="135" y2="35" stroke="#2563eb" stroke-width="2"/>
+                        <!-- Square Point for sharp look -->
+                        <rect x="132" y="32" width="6" height="6" fill="#2563eb"/>
+                        <text x="142" y="35" font-size="12" font-weight="bold" font-family="'Cambria Math'">(x, y)</text>
+                        <text x="110" y="55" font-size="12" fill="#2563eb" font-weight="bold" font-family="'Cambria Math'">r=1</text>
+                        <text x="165" y="85" font-size="12" font-weight="bold">X</text>
+                        <text x="105" y="15" font-size="12" font-weight="bold">Y</text>
                     </svg>
                 </div>
                 <div class="formula-block" style="grid-template-columns: 1fr;">
-                    <div class="formula-item"><b>sin &theta;</b> = y / 1 = y</div>
-                    <div class="formula-item"><b>cos &theta;</b> = x / 1 = x</div>
-                    <div class="formula-item"><b>tan &theta;</b> = y / x</div>
-                    <div class="formula-item"><b>csc &theta;</b> = 1 / y</div>
-                    <div class="formula-item"><b>sec &theta;</b> = 1 / x</div>
-                    <div class="formula-item"><b>cot &theta;</b> = x / y</div>
+                    <div class="formula-item">sin &theta; = y / 1 = y</div>
+                    <div class="formula-item">cos &theta; = x / 1 = x</div>
+                    <div class="formula-item">tan &theta; = y / x</div>
+                    <div class="formula-item">csc &theta; = 1 / y</div>
+                    <div class="formula-item">sec &theta; = 1 / x</div>
+                    <div class="formula-item">cot &theta; = x / y</div>
                 </div>
-
             </div>
         </div>
 
         <!-- Section 2 -->
-        <h2>2. फलनों के गुणधर्म: डोमेन, रेंज और आवर्तकाल (Facts & Properties)</h2>
+        <h2>2. फलनों के गुणधर्म: प्रांत (Domain), परिसर (Range) और आवर्तकाल (Period)</h2>
         <table>
             <thead>
                 <tr>
                     <th>फलन (Function)</th>
-                    <th>डोमेन (Domain)</th>
-                    <th>रेंज (Range)</th>
+                    <th>प्रांत (Domain)</th>
+                    <th>परिसर (Range)</th>
                     <th>आवर्तकाल (Period)</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><b>sin x</b></td>
+                    <td>sin x</td>
                     <td>R (सभी वास्तविक संख्याएँ)</td>
                     <td>[-1, 1]</td>
-
                     <td>2&pi;</td>
                 </tr>
                 <tr>
-                    <td><b>cos x</b></td>
+                    <td>cos x</td>
                     <td>R</td>
                     <td>[-1, 1]</td>
                     <td>2&pi;</td>
                 </tr>
                 <tr>
-                    <td><b>tan x</b></td>
+                    <td>tan x</td>
                     <td>R - {(2n+1)&pi;/2 ; n &in; Z}</td>
                     <td>(-&infin;, &infin;)</td>
                     <td>&pi;</td>
                 </tr>
                 <tr>
-                    <td><b>csc x</b></td>
+                    <td>csc x</td>
                     <td>R - {n&pi; ; n &in; Z}</td>
                     <td>(-&infin;, -1] &cup; [1, &infin;)</td>
                     <td>2&pi;</td>
-
                 </tr>
                 <tr>
-                    <td><b>sec x</b></td>
+                    <td>sec x</td>
                     <td>R - {(2n+1)&pi;/2 ; n &in; Z}</td>
                     <td>(-&infin;, -1] &cup; [1, &infin;)</td>
                     <td>2&pi;</td>
                 </tr>
                 <tr>
-                    <td><b>cot x</b></td>
+                    <td>cot x</td>
                     <td>R - {n&pi; ; n &in; Z}</td>
                     <td>(-&infin;, &infin;)</td>
                     <td>&pi;</td>
                 </tr>
             </tbody>
         </table>
-        <div class="card" style="margin-top: 10px;">
-            <b>JEE आवर्तकाल नियम (Periodicity Shift):</b> यदि f(x) का आवर्तकाल T है, तो f(&omega;x) का आवर्तकाल <b>T / |&omega;|</b> होगा।
-            <br>उदाहरण: sin(&omega;x) &rightarrow; 2&pi;/&omega; | cos(&omega;x) &rightarrow; 2&pi;/&omega; | tan(&omega;x) &rightarrow; &pi;/&omega;
+        <div class="card" style="margin-top: 10px; background: #eff6ff; border-color: #2563eb;">
+            <b style="color: #2563eb;">JEE आवर्तकाल नियम (Periodicity Shift):</b> यदि किसी फलन <i>f(x)</i> का आवर्तकाल <b>T</b> है, तो <i>f(&omega;x)</i> का आवर्तकाल <b>T / |&omega;|</b> होगा।
+            <br>
+            <span style="font-family: 'Cambria Math'; font-size: 15px;">उदाहरण: sin(&omega;x) &rightarrow; 2&pi;/&omega; | cos(&omega;x) &rightarrow; 2&pi;/&omega; | tan(&omega;x) &rightarrow; &pi;/&omega;</span>
         </div>
 
-
         <!-- Section 3 -->
-        <h2>3. बुनियादी सर्वसमिकाएँ (Formulas and Identities)</h2>
+        <h2>3. मूलभूत सर्वसमिकाएँ (Basic Identities)</h2>
         <div class="card">
             <div class="formula-block">
                 <div class="formula-item">sin²&theta; + cos²&theta; = 1</div>
@@ -309,16 +356,15 @@
                 <div class="formula-item">tan &theta; = sin &theta; / cos &theta;</div>
                 <div class="formula-item">csc &theta; = 1 / sin &theta;</div>
                 <div class="formula-item">sec &theta; = 1 / cos &theta;</div>
-                <div class="formula-item">cot &theta; = 1 / tan &theta; = cos &theta; / sin &theta;</div>
+                <div class="formula-item" style="grid-column: 1 / -1;">cot &theta; = 1 / tan &theta; = cos &theta; / sin &theta;</div>
             </div>
         </div>
 
         <!-- Section 4 -->
-        <h2>4. कोणों के नियम (Even/Odd & Periodic Formulas)</h2>
+        <h2>4. सम/विषम फलन एवं आवर्ती गुण (Even/Odd & Periodic Properties)</h2>
         <div class="grid-2">
             <div class="card">
                 <h3>सम/विषम फलन (Even / Odd)</h3>
-
                 <div class="formula-block" style="grid-template-columns: 1fr;">
                     <div class="formula-item">sin(-&theta;) = -sin &theta;</div>
                     <div class="formula-item">cos(-&theta;) = cos &theta; (सम फलन)</div>
@@ -329,40 +375,39 @@
                 </div>
             </div>
             <div class="card">
-                <h3>आवर्ती नियम (जहाँ n पूर्णांक है)</h3>
+                <h3>आवर्ती नियम (जहाँ n &in; Z पूर्णांक है)</h3>
                 <div class="formula-block" style="grid-template-columns: 1fr;">
-                    <div class="formula-item">sin(&theta; + 2&pi;n) = sin &theta;</div>
-                    <div class="formula-item">cos(&theta; + 2&pi;n) = cos &theta;</div>
-                    <div class="formula-item">tan(&theta; + &pi;n) = tan &theta;</div>
-                    <div class="formula-item">csc(&theta; + 2&pi;n) = csc &theta;</div>
-                    <div class="formula-item">sec(&theta; + 2&pi;n) = sec &theta;</div>
-                    <div class="formula-item">cot(&theta; + &pi;n) = cot &theta;</div>
+                    <div class="formula-item">sin(&theta; + 2n&pi;) = sin &theta;</div>
+                    <div class="formula-item">cos(&theta; + 2n&pi;) = cos &theta;</div>
+                    <div class="formula-item">tan(&theta; + n&pi;) = tan &theta;</div>
+                    <div class="formula-item">csc(&theta; + 2n&pi;) = csc &theta;</div>
+                    <div class="formula-item">sec(&theta; + 2n&pi;) = sec &theta;</div>
+                    <div class="formula-item">cot(&theta; + n&pi;) = cot &theta;</div>
                 </div>
-
             </div>
         </div>
 
         <!-- Section 5 -->
-        <h2>5. कोणों के योग और अंतर सूत्र (Sum and Difference Formulas)</h2>
+        <h2>5. कोणों के योग और अंतर के सूत्र (Sum & Difference Formulas)</h2>
         <div class="card">
             <div class="formula-block" style="grid-template-columns: 1fr;">
                 <div class="formula-item">sin(&alpha; &plusmn; &beta;) = sin&alpha; cos&beta; &plusmn; cos&alpha; sin&beta;</div>
-                <div class="formula-item">cos(&alpha; &plusmn; &beta;) = cos&alpha; cos&beta; &mp; sin&alpha; sin&beta; </div>
+                <div class="formula-item">cos(&alpha; &plusmn; &beta;) = cos&alpha; cos&beta; &mp; sin&alpha; sin&beta;</div>
                 <div class="formula-item">tan(&alpha; &plusmn; &beta;) = (tan&alpha; &plusmn; tan&beta;) / (1 &mp; tan&alpha; tan&beta;)</div>
+                <div class="formula-item">cot(&alpha; &plusmn; &beta;) = (cot&alpha; cot&beta; &mp; 1) / (cot&beta; &plusmn; cot&alpha;)</div>
             </div>
         </div>
 
         <!-- Section 6 -->
-        <h2>6. गुणित कोण और अर्ध-कोण सूत्र (Double & Half Angle Formulas)</h2>
+        <h2>6. गुणज एवं उप-गुणज कोणों के सूत्र (Double & Half Angle Formulas)</h2>
         <div class="grid-2">
             <div class="card">
                 <h3>द्विकोण सूत्र (Double Angle)</h3>
                 <div class="formula-block" style="grid-template-columns: 1fr;">
-
-                    <div class="formula-item">sin(2&theta;) = 2sin&theta;cos&theta; = 2tan&theta; / (1+tan²&theta;)</div>
-                    <div class="formula-item">cos(2&theta;) = cos²&theta; - sin²&theta; = 2cos²&theta; - 1 = 1 - 2sin²&theta;</div>
-                    <div class="formula-item">cos(2&theta;) = (1-tan²&theta;) / (1+tan²&theta;)</div>
-                    <div class="formula-item">tan(2&theta;) = 2tan&theta; / (1-tan²&theta;)</div>
+                    <div class="formula-item">sin(2&theta;) = 2sin&theta; cos&theta; = 2tan&theta; / (1 + tan²&theta;)</div>
+                    <div class="formula-item">cos(2&theta;) = cos²&theta; - sin²&theta; = 2cos²&theta; - 1</div>
+                    <div class="formula-item">cos(2&theta;) = 1 - 2sin²&theta; = (1 - tan²&theta;) / (1 + tan²&theta;)</div>
+                    <div class="formula-item">tan(2&theta;) = 2tan&theta; / (1 - tan²&theta;)</div>
                 </div>
             </div>
             <div class="card">
@@ -371,51 +416,61 @@
                     <div class="formula-item">sin²&theta; = &frac12; (1 - cos(2&theta;))</div>
                     <div class="formula-item">cos²&theta; = &frac12; (1 + cos(2&theta;))</div>
                     <div class="formula-item">tan²&theta; = (1 - cos(2&theta;)) / (1 + cos(2&theta;))</div>
+                    <div class="formula-item">sin(&theta;/2) = &plusmn;&radic;[(1 - cos&theta;) / 2]</div>
                 </div>
             </div>
         </div>
 
         <!-- Section 7 -->
-        <h2>7. रूपांतरण सूत्र (Product & Sum Identities)</h2>
+        <h2>7. योग-अंतर एवं गुणनफल रूपांतरण (Product & Sum Identities)</h2>
         <div class="card">
-
-            <h3>गुणनफल से योग/अंतर</h3>
-            <div class="formula-block" style="grid-template-columns: 1fr; margin-bottom: 15px;">
-                <div class="formula-item">sin&alpha; sin&beta; = &frac12; [cos(&alpha;-&beta;) - cos(&alpha;+&beta;)]</div>
-                <div class="formula-item">cos&alpha; cos&beta; = &frac12; [cos(&alpha;-&beta;) + cos(&alpha;+&beta;)]</div>
-                <div class="formula-item">sin&alpha; cos&beta; = &frac12; [sin(&alpha;+&beta;) + sin(&alpha;-&beta;)]</div>
-            </div>
-            <h3>योग/अंतर से गुणनफल</h3>
-            <div class="formula-block" style="grid-template-columns: 1fr;">
-                <div class="formula-item">sin&alpha; + sin&beta; = 2 sin((&alpha;+&beta;)/2) cos((&alpha;-&beta;)/2)</div>
-                <div class="formula-item">sin&alpha; - sin&beta; = 2 cos((&alpha;+&beta;)/2) sin((&alpha;-&beta;)/2)</div>
-                <div class="formula-item">cos&alpha; + cos&beta; = 2 cos((&alpha;+&beta;)/2) cos((&alpha;-&beta;)/2)</div>
-                <div class="formula-item">cos&alpha; - cos&beta; = -2 sin((&alpha;+&beta;)/2) sin((&alpha;-&beta;)/2)</div>
-            </div>
-        </div>
-
-        <!-- Section 8 -->
-        <h2>8. सह-फलन और रूपांतरण नियम (Cofunction Formulas)</h2>
-        <div class="card">
-            <div class="formula-block">
-
-                <div class="formula-item">sin(&pi;/2 - &theta;) = cos&theta;</div>
-                <div class="formula-item">cos(&pi;/2 - &theta;) = sin&theta;</div>
-                <div class="formula-item">tan(&pi;/2 - &theta;) = cot&theta;</div>
-                <div class="formula-item">csc(&pi;/2 - &theta;) = sec&theta;</div>
-                <div class="formula-item">sec(&pi;/2 - &theta;) = csc&theta;</div>
-                <div class="formula-item">cot(&pi;/2 - &theta;) = tan&theta;</div>
+            <div class="grid-2">
+                <div>
+                    <h3>गुणनफल से योग/अंतर</h3>
+                    <div class="formula-block" style="grid-template-columns: 1fr;">
+                        <div class="formula-item">2 sin&alpha; cos&beta; = sin(&alpha;+&beta;) + sin(&alpha;-&beta;)</div>
+                        <div class="formula-item">2 cos&alpha; sin&beta; = sin(&alpha;+&beta;) - sin(&alpha;-&beta;)</div>
+                        <div class="formula-item">2 cos&alpha; cos&beta; = cos(&alpha;+&beta;) + cos(&alpha;-&beta;)</div>
+                        <div class="formula-item">2 sin&alpha; sin&beta; = cos(&alpha;-&beta;) - cos(&alpha;+&beta;)</div>
+                    </div>
+                </div>
+                <div>
+                    <h3>योग/अंतर से गुणनफल (C & D Formulas)</h3>
+                    <div class="formula-block" style="grid-template-columns: 1fr;">
+                        <div class="formula-item">sin C + sin D = 2 sin((C+D)/2) cos((C-D)/2)</div>
+                        <div class="formula-item">sin C - sin D = 2 cos((C+D)/2) sin((C-D)/2)</div>
+                        <div class="formula-item">cos C + cos D = 2 cos((C+D)/2) cos((C-D)/2)</div>
+                        <div class="formula-item">cos C - cos D = -2 sin((C+D)/2) sin((C-D)/2)</div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Section 9 -->
-        <h2>9. डिग्री से रेडियन रूपांतरण (Degree to Radian)</h2>
-        <div class="card">
-            <p>यदि x डिग्री में कोण है और r रेडियन में है:</p>
-            <div class="formula-block">
-                <div class="formula-item"><b>&pi; / 180&deg; = r / x</b></div>
-                <div class="formula-item"><b>r = (&pi; * x) / 180&deg;</b></div>
-                <div class="formula-item"><b>x = (180&deg; * r) / &pi;</b></div>
+        <!-- Section 8 & 9 Combined for better layout -->
+        <div class="grid-2">
+            <div>
+                <h2>8. पूरक कोण सूत्र (Cofunction)</h2>
+                <div class="card">
+                    <div class="formula-block" style="grid-template-columns: 1fr 1fr;">
+                        <div class="formula-item">sin(&pi;/2 - &theta;) = cos&theta;</div>
+                        <div class="formula-item">cos(&pi;/2 - &theta;) = sin&theta;</div>
+                        <div class="formula-item">tan(&pi;/2 - &theta;) = cot&theta;</div>
+                        <div class="formula-item">cot(&pi;/2 - &theta;) = tan&theta;</div>
+                        <div class="formula-item">sec(&pi;/2 - &theta;) = csc&theta;</div>
+                        <div class="formula-item">csc(&pi;/2 - &theta;) = sec&theta;</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>9. डिग्री एवं रेडियन रूपांतरण</h2>
+                <div class="card">
+                    <p style="margin-top:0; font-weight:600; font-size:15px;">यदि D डिग्री में कोण है और R रेडियन में है:</p>
+                    <div class="formula-block" style="grid-template-columns: 1fr;">
+                        <div class="formula-item" style="justify-content: center;">D / 180 = R / &pi;</div>
+                        <div class="formula-item" style="justify-content: center;">R = (D &times; &pi;) / 180</div>
+                        <div class="formula-item" style="justify-content: center;">D = (R &times; 180) / &pi;</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -423,5 +478,3 @@
 
 </body>
 </html>
-
-
