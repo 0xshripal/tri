@@ -1,552 +1,735 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>त्रिकोणमिति सम्पूर्ण फॉर्मूला शीट (JEE & Class 12th)</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Cambria+Math&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Trigonometry Formula Sheet — Class 12 | JEE Main & Advanced</title>
 
-    <style>
-        :root {
-            --primary-color: #0f172a; 
-            --accent-color: #2563eb; 
-            --text-color: #1e293b;
-            --border-color: #94a3b8;
-            --bg-light: #ffffff;
-        }
-        
-        body {
-            font-family: 'Noto Sans Devanagari', 'Segoe UI', sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            padding-top: 60px; /* Space for fixed nav */
-            background-color: #f8fafc;
-            background-image: 
-                linear-gradient(#e2e8f0 1px, transparent 1px), 
-                linear-gradient(90deg, #e2e8f0 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
+<!-- MathJax: formulas print as proper fractions, e.g. 1/cosθ → 1 over cosθ -->
+<script>
+window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},
+svg:{fontCache:'global'}};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
-        /* Language Navbar */
-        .lang-nav {
-            position: fixed;
-            top: 0;
-            right: 0;
-            left: 0;
-            background: white;
-            border-bottom: 2px solid var(--primary-color);
-            padding: 10px 20px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 10px;
-            z-index: 1000;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
+<style>
+*{box-sizing:border-box}
+:root{--blue:#1a73e8;--text:#202124;--border:#d7dce2;--light:#f7f9fc}
+body{margin:0;padding:18px;background:#eef1f5;color:var(--text);
+font-family:"Segoe UI","Noto Sans Devanagari",Arial,sans-serif;line-height:1.45}
+.toolbar{max-width:1100px;margin:0 auto 12px;display:flex;justify-content:flex-end;gap:10px}
+.lang-wrap{position:relative}
+.toolbar button{border:1px solid #cbd2da;background:#fff;color:#202124;border-radius:8px;
+padding:9px 13px;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 2px 5px #00000012}
+.toolbar button:hover{background:#f5f7fa}
+.lang-menu{display:none;position:absolute;right:0;top:43px;width:205px;max-height:390px;
+overflow:auto;background:#fff;border:1px solid #ccd3db;border-radius:9px;box-shadow:0 8px 24px #0002;z-index:50}
+.lang-menu.open{display:block}
+.lang-menu button{display:block;width:100%;border:0;box-shadow:none;text-align:left;border-radius:0;padding:8px 12px}
+.sheet{max-width:1100px;margin:auto;background:#fff;padding:25px;border-radius:10px;box-shadow:0 4px 18px #0000000d}
+h1{text-align:center;margin:0 0 8px;font-size:29px;border-bottom:3px solid var(--blue);padding-bottom:10px}
+h2{font-size:20px;color:#1558b0;border-bottom:1px solid var(--border);padding-bottom:5px;margin:22px 0 12px}
+h3{font-size:16px;margin:3px 0 10px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{border:1px solid var(--border);border-radius:8px;padding:13px;background:var(--light)}
+.formulas{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.formula{background:#fff;border:1px solid #e0e4e9;border-radius:5px;padding:8px;font-family:"Cambria Math","Times New Roman",serif}
+.formula.full{grid-column:1/-1}
+.diagram{display:flex;justify-content:center;align-items:center;margin:8px 0;padding:5px;background:#fff;border:1px dashed #b8bec7;border-radius:6px}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-family:"Cambria Math","Times New Roman",serif}
+th,td{border:1px solid var(--border);padding:7px;text-align:center}
+th{background:#edf3ff;color:#1558b0}
+.note{background:#eef5ff;border-radius:7px;padding:9px;margin-top:8px}
+.small{font-size:13px}
+.math{font-family:"Cambria Math","Times New Roman",serif}
+@media(max-width:800px){.grid2,.formulas{grid-template-columns:1fr}.sheet{padding:13px}}
+@media print{
+ body{background:#fff;padding:0}
+ .toolbar{display:none!important}
+ .sheet{max-width:none;box-shadow:none;border-radius:0;padding:8mm}
+ .card{break-inside:avoid;background:#fff}
+ h2{break-after:avoid}
+ .formula{break-inside:avoid}
+}
+</style>
 
-        .lang-nav span {
-            font-weight: bold;
-            margin-right: 10px;
-            font-size: 14px;
-        }
+<style>
+.action-btn{
+  border:1px solid #cbd5e1;
+  background:#fff;
+  color:#111827;
+  padding:10px 18px;
+  border-radius:9px;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 2px 6px rgba(0,0,0,.08);
+}
+.action-btn:hover{background:#f3f4f6}
+@media print{
+  .no-print{display:none !important}
+}
+</style>
 
-        .lang-btn {
-            background: transparent;
-            border: 1px solid var(--border-color);
-            padding: 5px 12px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 13px;
-            transition: 0.2s;
-        }
-
-        .lang-btn.active, .lang-btn:hover {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
-
-        /* Real Mathematical Fractions styling */
-        .frac {
-            display: inline-block;
-            vertical-align: middle;
-            text-align: center;
-            margin: 0 4px;
-            font-family: 'Cambria Math', 'Times New Roman', serif;
-            font-size: 1.1em;
-        }
-        .frac > span {
-            display: block;
-            padding: 0.1em 0.3em;
-        }
-        .frac > span.num {
-            border-bottom: 1.5px solid var(--primary-color);
-        }
-        .frac > span.den {
-            /* padding-top: 0.1em; */
-        }
-        
-        .inline-math {
-            font-family: 'Cambria Math', 'Times New Roman', serif;
-            font-size: 1.1em;
-        }
-
-        .sheet-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border: 2px solid var(--primary-color);
-            border-radius: 0;
-            box-shadow: 8px 8px 0px rgba(15, 23, 42, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: var(--primary-color);
-            margin-top: 0;
-            border-bottom: 4px solid var(--primary-color);
-            padding-bottom: 15px;
-            font-size: 32px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .subtitle {
-            text-align: center;
-            font-weight: 600;
-            color: var(--accent-color);
-            margin-bottom: 30px;
-            font-size: 18px;
-            background: #eff6ff;
-            display: inline-block;
-            padding: 5px 15px;
-            border: 1px solid var(--accent-color);
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 5px;
-            margin-top: 40px;
-            font-size: 22px;
-            font-weight: 700;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-
-        .card {
-            border: 1px solid var(--border-color);
-            border-radius: 0; 
-            padding: 20px;
-            background-color: var(--bg-light);
-            box-shadow: 3px 3px 0px rgba(148, 163, 184, 0.2);
-        }
-
-        .card h3 {
-            margin-top: 0;
-            color: var(--accent-color);
-            font-size: 18px;
-            border-bottom: 1px dashed var(--border-color);
-            padding-bottom: 8px;
-        }
-
-        .diagram-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 15px 0;
-            background: #f8fafc;
-            border: 1px solid var(--border-color);
-            padding: 15px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 15px;
-        }
-
-        th, td {
-            border: 1px solid var(--primary-color);
-            padding: 12px;
-            text-align: left;
-            border-radius: 0;
-        }
-
-        th {
-            background-color: var(--primary-color);
-            color: white;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        td {
-            text-align: center;
-            font-size: 16px;
-        }
-
-        td:first-child {
-            font-weight: bold;
-            color: var(--accent-color);
-            font-family: 'Cambria Math', serif;
-        }
-
-        .formula-block {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            font-size: 16px;
-            font-family: 'Cambria Math', 'Times New Roman', serif;
-        }
-
-        .formula-item {
-            padding: 10px;
-            background: #fff;
-            border: 1px solid var(--border-color);
-            border-left: 4px solid var(--accent-color);
-            font-weight: 600;
-            color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            min-height: 45px; /* Ensures fractions have enough vertical space */
-        }
-
-        /* Language classes */
-        .lang-en, .lang-gu, .lang-other { display: none; }
-
-        @media print {
-            body { background: white !important; padding: 0; }
-            .lang-nav { display: none; }
-            .sheet-container { box-shadow: none; border: none; padding: 0; max-width: 100%; }
-            .card { box-shadow: none; break-inside: avoid; }
-            h2 { break-after: avoid; }
-            tr { break-inside: avoid; }
-            .formula-item { border: 1px solid #000; border-left: 3px solid #000; }
-            th { background-color: #e2e8f0; color: #000; }
-        }
-    </style>
 </head>
+
 <body>
 
-    <!-- Language Selector -->
-    <div class="lang-nav">
-        <span>Language:</span>
-        <button class="lang-btn active" onclick="setLang('hi')">Hindi</button>
-        <button class="lang-btn" onclick="setLang('en')">EN</button>
-        <button class="lang-btn" onclick="setLang('gu')">Gujarati</button>
-        <button class="lang-btn" onclick="setLang('other')">All Indian</button>
+<div class="top-actions no-print" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:12px 0;">
+  <button type="button" onclick="window.print()" class="action-btn">🖨️ Print</button>
+  <button type="button" onclick="downloadHTML()" class="action-btn">⬇️ Download HTML</button>
+</div>
+
+
+<!-- This entire toolbar is hidden in print/PDF -->
+<div class="toolbar no-print">
+  <div class="lang-wrap">
+    <button type="button" onclick="toggleLang()">🌐 <span id="langName">हिन्दी</span> ▾</button>
+    <div class="lang-menu" id="langMenu">
+      <button onclick="setLang('hi')">🇮🇳 हिन्दी</button>
+      <button onclick="setLang('en')">🇬🇧 English</button>
+      <button onclick="setLang('gu')">ગુજરાતી</button>
+      <button onclick="setLang('mr')">मराठी</button>
+      <button onclick="setLang('bn')">বাংলা</button>
+      <button onclick="setLang('ta')">தமிழ்</button>
+      <button onclick="setLang('te')">తెలుగు</button>
+      <button onclick="setLang('kn')">ಕನ್ನಡ</button>
+      <button onclick="setLang('ml')">മലയാളം</button>
+      <button onclick="setLang('pa')">ਪੰਜਾਬੀ</button>
+      <button onclick="setLang('or')">ଓଡ଼ିଆ</button>
+      <button onclick="setLang('as')">অসমীয়া</button>
+      <button onclick="setLang('ur')">اردو</button>
     </div>
+  </div>
 
-    <div class="sheet-container">
-        <h1>
-            <span class="lang-hi">त्रिकोणमिति सम्पूर्ण सूत्र शीट</span>
-            <span class="lang-en">Trigonometry Complete Formula Sheet</span>
-            <span class="lang-gu">ત્રિકોણમિતિ સંપૂર્ણ સૂત્ર શીટ</span>
-            <span class="lang-other">Trigonometry Master Sheet</span>
-        </h1>
-        <div class="subtitle">
-            <span class="lang-hi">कक्षा 12वीं बोर्ड एवं JEE (Main + Advanced) के लिए विशेष संकलन</span>
-            <span class="lang-en">Special Compilation for Class 12th Boards & JEE (Main + Advanced)</span>
-            <span class="lang-gu">વર્ગ 12 અને JEE માટે વિશેષ</span>
-            <span class="lang-other">For All Boards & Competitive Exams</span>
-        </div>
+</div>
 
-        <!-- Section 1 -->
-        <h2>
-            <span class="lang-hi">1. त्रिकोणमितीय फलनों की मूलभूत परिभाषा</span>
-            <span class="lang-en">1. Basic Definitions of Trigonometric Functions</span>
-            <span class="lang-gu">1. મૂળભૂત વ્યાખ્યાઓ</span>
-            <span class="lang-other">1. Fundamental Definitions</span>
-        </h2>
-        <div class="grid-2">
-            <div class="card">
-                <h3>
-                    <span class="lang-hi">क) समकोण त्रिभुज पर आधारित</span>
-                    <span class="lang-en">A) Right Angled Triangle</span>
-                    <span class="lang-gu">A) કાટકોણ ત્રિકોણ</span>
-                    <span class="lang-other">A) Triangle Based</span>
-                </h3>
-                <div class="diagram-container">
-                    <svg width="200" height="120" viewBox="0 0 200 120">
-                        <!-- Triangle with gap at bottom-left junction -->
-                        <line x1="30" y1="20" x2="30" y2="95" stroke="#0f172a" stroke-width="2"/> <!-- Perpendicular -->
-                        <line x1="35" y1="100" x2="170" y2="100" stroke="#0f172a" stroke-width="2"/> <!-- Base -->
-                        <line x1="30" y1="20" x2="170" y2="100" stroke="#0f172a" stroke-width="2"/> <!-- Hypotenuse -->
-                        
-                        <rect x="30" y="85" width="10" height="10" fill="none" stroke="#0f172a" stroke-width="1.5"/>
-                        <text x="5" y="65" font-size="13" font-weight="bold">
-                            <tspan class="lang-hi">लंब</tspan><tspan class="lang-en">Opp</tspan><tspan class="lang-gu">સામે</tspan><tspan class="lang-other">Opp</tspan>
-                        </text>
-                        <text x="80" y="118" font-size="13" font-weight="bold">
-                            <tspan class="lang-hi">आधार</tspan><tspan class="lang-en">Adj</tspan><tspan class="lang-gu">પાસે</tspan><tspan class="lang-other">Base</tspan>
-                        </text>
-                        <text x="100" y="45" font-size="13" font-weight="bold">
-                            <tspan class="lang-hi">कर्ण</tspan><tspan class="lang-en">Hyp</tspan><tspan class="lang-gu">કર્ણ</tspan><tspan class="lang-other">Hyp</tspan>
-                        </text>
-                        <path d="M 140,100 A 30,30 0 0 0 125,80" fill="none" stroke="#2563eb" stroke-width="1.5"/>
-                        <text x="115" y="95" font-size="14" fill="#2563eb" font-weight="bold">&theta;</text>
-                    </svg>
-                </div>
-                <div class="formula-block" style="grid-template-columns: 1fr;">
-                    <div class="formula-item">sin &theta; =&nbsp; <div class="frac"><span class="num lang-hi">लंब</span><span class="num lang-en">Opp</span><span class="num lang-gu">સા.બા</span><span class="num lang-other">Perp</span><span class="den lang-hi">कर्ण</span><span class="den lang-en">Hyp</span><span class="den lang-gu">કર્ણ</span><span class="den lang-other">Hyp</span></div></div>
-                    <div class="formula-item">cos &theta; =&nbsp; <div class="frac"><span class="num lang-hi">आधार</span><span class="num lang-en">Adj</span><span class="num lang-gu">પા.બા</span><span class="num lang-other">Base</span><span class="den lang-hi">कर्ण</span><span class="den lang-en">Hyp</span><span class="den lang-gu">કર્ણ</span><span class="den lang-other">Hyp</span></div></div>
-                    <div class="formula-item">tan &theta; =&nbsp; <div class="frac"><span class="num lang-hi">लंब</span><span class="num lang-en">Opp</span><span class="num lang-gu">સા.બા</span><span class="num lang-other">Perp</span><span class="den lang-hi">आधार</span><span class="den lang-en">Adj</span><span class="den lang-gu">પા.બા</span><span class="den lang-other">Base</span></div></div>
-                </div>
-            </div>
+<main class="sheet">
+<h1 data-hi="त्रिकोणमिति सम्पूर्ण फॉर्मूला शीट" data-en="Complete Trigonometry Formula Sheet">
+त्रिकोणमिति सम्पूर्ण फॉर्मूला शीट
+</h1>
 
-            <div class="card">
-                <h3>
-                    <span class="lang-hi">ख) इकाई वृत्त पर आधारित</span>
-                    <span class="lang-en">B) Unit Circle Based</span>
-                    <span class="lang-gu">B) એકમ વર્તુળ</span>
-                    <span class="lang-other">B) Unit Circle</span>
-                </h3>
-                <div class="diagram-container">
-                    <svg width="200" height="120" viewBox="0 0 200 140">
-                        <circle cx="100" cy="70" r="50" fill="none" stroke="#0f172a" stroke-width="1.5"/>
-                        <line x1="30" y1="70" x2="170" y2="70" stroke="#94a3b8" stroke-width="1.5"/>
-                        <line x1="100" y1="10" x2="100" y2="130" stroke="#94a3b8" stroke-width="1.5"/>
-                        <!-- Radius line deliberately not touching the circumference -->
-                        <line x1="100" y1="70" x2="128" y2="42" stroke="#2563eb" stroke-width="2"/>
-                        <rect x="131" y="31" width="6" height="6" fill="#2563eb"/>
-                        <text x="142" y="35" font-size="12" font-weight="bold" font-family="'Cambria Math'">(x, y)</text>
-                        <text x="100" y="48" font-size="12" fill="#2563eb" font-weight="bold" font-family="'Cambria Math'">r=1</text>
-                        <text x="165" y="85" font-size="12" font-weight="bold">X</text>
-                        <text x="105" y="15" font-size="12" font-weight="bold">Y</text>
-                    </svg>
-                </div>
-                <div class="formula-block" style="grid-template-columns: 1fr;">
-                    <div class="formula-item">sin &theta; =&nbsp; <div class="frac"><span class="num">y</span><span class="den">1</span></div> &nbsp;= y</div>
-                    <div class="formula-item">cos &theta; =&nbsp; <div class="frac"><span class="num">x</span><span class="den">1</span></div> &nbsp;= x</div>
-                    <div class="formula-item">tan &theta; =&nbsp; <div class="frac"><span class="num">y</span><span class="den">x</span></div></div>
-                </div>
-            </div>
-        </div>
+<h2 data-hi="1. मूल परिभाषाएँ" data-en="1. Basic Definitions">1. मूल परिभाषाएँ</h2>
+<div class="grid2">
+<div class="card">
+<h3 data-hi="समकोण त्रिभुज में" data-en="In a Right Triangle">समकोण त्रिभुज में</h3>
+<div class="diagram">
+<svg width="290" height="155" viewBox="0 0 290 155">
+<polygon points="45,20 45,130 255,130" fill="none" stroke="#202124" stroke-width="2"/>
+<rect x="45" y="115" width="15" height="15" fill="none" stroke="#202124"/>
+<!-- labels kept away from the lines -->
+<text x="8" y="78" font-size="13">लंब</text><text x="8" y="96" font-size="11">(Perpendicular)</text>
+<text x="130" y="148" font-size="13">आधार (Base)</text>
+<text x="150" y="63" font-size="13">कर्ण (Hypotenuse)</text>
+<path d="M225 130 A25 25 0 0 0 211 111" fill="none" stroke="#202124" stroke-width="1.5"/>
+<text x="213" y="124" font-size="13">θ</text>
+</svg>
+</div>
+<div class="formulas">
+<div class="formula">\(\sin\theta=\frac{\text{लंब}}{\text{कर्ण}}\)</div>
+<div class="formula">\(\cos\theta=\frac{\text{आधार}}{\text{कर्ण}}\)</div>
+<div class="formula">\(\tan\theta=\frac{\text{लंब}}{\text{आधार}}\)</div>
+<div class="formula">\(\cot\theta=\frac{\text{आधार}}{\text{लंब}}\)</div>
+<div class="formula">\(\sec\theta=\frac{\text{कर्ण}}{\text{आधार}}\)</div>
+<div class="formula">\(\csc\theta=\frac{\text{कर्ण}}{\text{लंब}}\)</div>
+</div>
+</div>
 
-        <!-- Section 2 -->
-        <h2>
-            <span class="lang-hi">2. फलनों के गुणधर्म: प्रांत (Domain), परिसर (Range) और आवर्तकाल (Period)</span>
-            <span class="lang-en">2. Properties: Domain, Range and Period</span>
-            <span class="lang-gu">2. ગુણધર્મો: પ્રદેશ, વિસ્તાર અને આવર્તમાન</span>
-            <span class="lang-other">2. Functions: Domain, Range & Periodicity</span>
-        </h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Function</th>
-                    <th><span class="lang-hi">प्रांत</span> Domain</th>
-                    <th><span class="lang-hi">परिसर</span> Range</th>
-                    <th><span class="lang-hi">आवर्तकाल</span> Period</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>sin x</td><td class="inline-math">\mathbb{R}</td><td class="inline-math">[-1, 1]</td><td class="inline-math">2&pi;</td></tr>
-                <tr><td>cos x</td><td class="inline-math">\mathbb{R}</td><td class="inline-math">[-1, 1]</td><td class="inline-math">2&pi;</td></tr>
-                <tr><td>tan x</td><td class="inline-math">\mathbb{R} - {(2n+1)&pi;/2}</td><td class="inline-math">(-\infin;, &infin;)</td><td class="inline-math">&pi;</td></tr>
-                <tr><td>csc x</td><td class="inline-math">\mathbb{R} - {n&pi;}</td><td class="inline-math">(-\infin;, -1] &cup; [1, &infin;)</td><td class="inline-math">2&pi;</td></tr>
-                <tr><td>sec x</td><td class="inline-math">\mathbb{R} - {(2n+1)&pi;/2}</td><td class="inline-math">(-\infin;, -1] &cup; [1, &infin;)</td><td class="inline-math">2&pi;</td></tr>
-                <tr><td>cot x</td><td class="inline-math">\mathbb{R} - {n&pi;}</td><td class="inline-math">(-\infin;, &infin;)</td><td class="inline-math">&pi;</td></tr>
-            </tbody>
-        </table>
+<div class="card">
+<h3 data-hi="इकाई वृत्त (Unit Circle)" data-en="Unit Circle">इकाई वृत्त (Unit Circle)</h3>
+<div class="diagram">
+<svg width="290" height="170" viewBox="0 0 290 170">
+<circle cx="135" cy="85" r="62" fill="none" stroke="#202124" stroke-width="1.5"/>
+<line x1="55" y1="85" x2="215" y2="85" stroke="#999"/>
+<line x1="135" y1="15" x2="135" y2="155" stroke="#999"/>
+<line x1="135" y1="85" x2="180" y2="45" stroke="#202124" stroke-width="2"/>
+<circle cx="180" cy="45" r="3" fill="#202124"/>
+<!-- r=1 placed directly along radius, not as a separate arbitrary label -->
+<text x="153" y="67" font-size="13">r = 1</text>
+<text x="185" y="43" font-size="12">(x,y)</text>
+<text x="218" y="89" font-size="12">X</text><text x="139" y="17" font-size="12">Y</text>
+</svg>
+</div>
+<div class="formulas">
+<div class="formula">\(\sin\theta=y\)</div>
+<div class="formula">\(\cos\theta=x\)</div>
+<div class="formula">\(\tan\theta=\frac{y}{x}\)</div>
+<div class="formula">\(\csc\theta=\frac1y\)</div>
+<div class="formula">\(\sec\theta=\frac1x\)</div>
+<div class="formula">\(\cot\theta=\frac{x}{y}\)</div>
+</div>
+</div>
+</div>
 
-        <!-- Section 3 -->
-        <h2>
-            <span class="lang-hi">3. मूलभूत सर्वसमिकाएँ (Basic Identities)</span>
-            <span class="lang-en">3. Basic Identities</span>
-            <span class="lang-gu">3. મૂળભૂત નિત્યસમ</span>
-            <span class="lang-other">3. Core Identities</span>
-        </h2>
-        <div class="card">
-            <div class="formula-block">
-                <div class="formula-item">sin²&theta; + cos²&theta; = 1</div>
-                <div class="formula-item">sec²&theta; - tan²&theta; = 1</div>
-                <div class="formula-item">csc²&theta; - cot²&theta; = 1</div>
-                <div class="formula-item">tan &theta; =&nbsp; <div class="frac"><span class="num">sin &theta;</span><span class="den">cos &theta;</span></div></div>
-                <div class="formula-item">sec &theta; =&nbsp; <div class="frac"><span class="num">1</span><span class="den">cos &theta;</span></div></div>
-                <div class="formula-item">cot &theta; =&nbsp; <div class="frac"><span class="num">cos &theta;</span><span class="den">sin &theta;</span></div> &nbsp;=&nbsp; <div class="frac"><span class="num">1</span><span class="den">tan &theta;</span></div></div>
-            </div>
-        </div>
+<h2 data-hi="2. मान, चिह्न, डोमेन, रेंज और आवर्तकाल" data-en="2. Values, Signs, Domain, Range & Period">2. मान, चिह्न, डोमेन, रेंज और आवर्तकाल</h2>
+<div class="card">
+<table>
+<tr><th>θ</th><th>0°</th><th>30°</th><th>45°</th><th>60°</th><th>90°</th></tr>
+<tr><th>sin θ</th><td>0</td><td>\(\frac12\)</td><td>\(\frac1{\sqrt2}\)</td><td>\(\frac{\sqrt3}{2}\)</td><td>1</td></tr>
+<tr><th>cos θ</th><td>1</td><td>\(\frac{\sqrt3}{2}\)</td><td>\(\frac1{\sqrt2}\)</td><td>\(\frac12\)</td><td>0</td></tr>
+<tr><th>tan θ</th><td>0</td><td>\(\frac1{\sqrt3}\)</td><td>1</td><td>\(\sqrt3\)</td><td>undefined</td></tr>
+<tr><th>csc θ</th><td>undefined</td><td>2</td><td>\(\sqrt2\)</td><td>\(\frac2{\sqrt3}\)</td><td>1</td></tr>
+<tr><th>sec θ</th><td>1</td><td>\(\frac2{\sqrt3}\)</td><td>\(\sqrt2\)</td><td>2</td><td>undefined</td></tr>
+<tr><th>cot θ</th><td>undefined</td><td>\(\sqrt3\)</td><td>1</td><td>\(\frac1{\sqrt3}\)</td><td>0</td></tr>
+</table>
+<div class="grid2">
+<div class="note">
+<b>ASTC:</b> I — All +, II — sin/csc +, III — tan/cot +, IV — cos/sec +.
+</div>
+<div class="note">
+\(\sin x,\cos x\): Domain \(R\), Range \([-1,1]\), Period \(2\pi\).<br>
+\(\tan x,\cot x\): Period \(\pi\).<br>
+\(\sec x,\csc x\): Range \((-\infty,-1]\cup[1,\infty)\).
+</div>
+</div>
+</div>
 
-        <!-- Section 5 -->
-        <h2>
-            <span class="lang-hi">4. कोणों के योग और अंतर के सूत्र (Sum & Difference)</span>
-            <span class="lang-en">4. Sum & Difference Formulas</span>
-            <span class="lang-gu">4. સરવાળા અને બાદબાકી સૂત્રો</span>
-            <span class="lang-other">4. Compound Angles</span>
-        </h2>
-        <div class="card">
-            <div class="formula-block" style="grid-template-columns: 1fr;">
-                <div class="formula-item">sin(A &plusmn; B) = sin A cos B &plusmn; cos A sin B</div>
-                <div class="formula-item">cos(A &plusmn; B) = cos A cos B &mp; sin A sin B</div>
-                <div class="formula-item">tan(A &plusmn; B) =&nbsp; <div class="frac"><span class="num">tan A &plusmn; tan B</span><span class="den">1 &mp; tan A tan B</span></div></div>
-                <div class="formula-item">cot(A &plusmn; B) =&nbsp; <div class="frac"><span class="num">cot A cot B &mp; 1</span><span class="den">cot B &plusmn; cot A</span></div></div>
-            </div>
-        </div>
+<h2 data-hi="3. मूल सर्वसमिकाएँ" data-en="3. Fundamental Identities">3. मूल सर्वसमिकाएँ</h2>
+<div class="formulas">
+<div class="formula">\(\sin^2\theta+\cos^2\theta=1\)</div>
+<div class="formula">\(1+\tan^2\theta=\sec^2\theta\)</div>
+<div class="formula">\(1+\cot^2\theta=\csc^2\theta\)</div>
+<div class="formula">\(\tan\theta=\frac{\sin\theta}{\cos\theta}\)</div>
+<div class="formula">\(\cot\theta=\frac{\cos\theta}{\sin\theta}\)</div>
+<div class="formula">\(\sec\theta=\frac1{\cos\theta}\)</div>
+<div class="formula">\(\csc\theta=\frac1{\sin\theta}\)</div>
+<div class="formula">\(\cot\theta=\frac1{\tan\theta}\)</div>
+</div>
 
-        <!-- Section 6 -->
-        <h2>
-            <span class="lang-hi">5. गुणज एवं उप-गुणज कोण (Double & Half Angle)</span>
-            <span class="lang-en">5. Double & Half Angle Formulas</span>
-            <span class="lang-gu">5. ગુણક અને ઉપ-ગુણક ખૂણા</span>
-            <span class="lang-other">5. Multiples of Angles</span>
-        </h2>
-        <div class="grid-2">
-            <div class="card">
-                <h3><span class="lang-hi">2&theta; सूत्र</span><span class="lang-en">2&theta; Formulas</span></h3>
-                <div class="formula-block" style="grid-template-columns: 1fr;">
-                    <div class="formula-item">sin(2&theta;) = 2sin&theta; cos&theta; =&nbsp; <div class="frac"><span class="num">2tan&theta;</span><span class="den">1 + tan²&theta;</span></div></div>
-                    <div class="formula-item">cos(2&theta;) = cos²&theta; - sin²&theta; = 2cos²&theta; - 1</div>
-                    <div class="formula-item">cos(2&theta;) = 1 - 2sin²&theta; =&nbsp; <div class="frac"><span class="num">1 - tan²&theta;</span><span class="den">1 + tan²&theta;</span></div></div>
-                    <div class="formula-item">tan(2&theta;) =&nbsp; <div class="frac"><span class="num">2tan&theta;</span><span class="den">1 - tan²&theta;</span></div></div>
-                </div>
-            </div>
-            <div class="card">
-                <h3><span class="lang-hi">3&theta; सूत्र</span><span class="lang-en">3&theta; Formulas</span></h3>
-                <div class="formula-block" style="grid-template-columns: 1fr;">
-                    <div class="formula-item">sin(3&theta;) = 3sin&theta; - 4sin³&theta;</div>
-                    <div class="formula-item">cos(3&theta;) = 4cos³&theta; - 3cos&theta;</div>
-                    <div class="formula-item">tan(3&theta;) =&nbsp; <div class="frac"><span class="num">3tan&theta; - tan³&theta;</span><span class="den">1 - 3tan²&theta;</span></div></div>
-                </div>
-            </div>
-        </div>
+<h2 data-hi="4. ऋणात्मक कोण और आवर्ती सूत्र" data-en="4. Negative Angles & Periodic Formulae">4. ऋणात्मक कोण और आवर्ती सूत्र</h2>
+<div class="formulas">
+<div class="formula">\(\sin(-\theta)=-\sin\theta\)</div>
+<div class="formula">\(\cos(-\theta)=\cos\theta\)</div>
+<div class="formula">\(\tan(-\theta)=-\tan\theta\)</div>
+<div class="formula">\(\sec(-\theta)=\sec\theta\)</div>
+<div class="formula">\(\csc(-\theta)=-\csc\theta\)</div>
+<div class="formula">\(\cot(-\theta)=-\cot\theta\)</div>
+<div class="formula">\(\sin(\theta+2n\pi)=\sin\theta\)</div>
+<div class="formula">\(\cos(\theta+2n\pi)=\cos\theta\)</div>
+<div class="formula">\(\tan(\theta+n\pi)=\tan\theta\)</div>
+<div class="formula">\(\cot(\theta+n\pi)=\cot\theta\)</div>
+</div>
 
-        <!-- Section 7 -->
-        <h2>
-            <span class="lang-hi">6. योग-अंतर एवं गुणनफल रूपांतरण (Sum / Product Transformations)</span>
-            <span class="lang-en">6. Sum & Product Transformations</span>
-        </h2>
-        <div class="card">
-            <div class="grid-2">
-                <div>
-                    <h3><span class="lang-hi">गुणनफल से योग/अंतर</span><span class="lang-en">Product to Sum</span></h3>
-                    <div class="formula-block" style="grid-template-columns: 1fr;">
-                        <div class="formula-item">2 sin A cos B = sin(A+B) + sin(A-B)</div>
-                        <div class="formula-item">2 cos A sin B = sin(A+B) - sin(A-B)</div>
-                        <div class="formula-item">2 cos A cos B = cos(A+B) + cos(A-B)</div>
-                        <div class="formula-item">2 sin A sin B = cos(A-B) - cos(A+B)</div>
-                    </div>
-                </div>
-                <div>
-                    <h3><span class="lang-hi">योग/अंतर से गुणनफल (C & D)</span><span class="lang-en">Sum to Product</span></h3>
-                    <div class="formula-block" style="grid-template-columns: 1fr;">
-                        <div class="formula-item">sin C + sin D = 2 sin<div class="frac"><span class="num">C+D</span><span class="den">2</span></div> cos<div class="frac"><span class="num">C-D</span><span class="den">2</span></div></div>
-                        <div class="formula-item">sin C - sin D = 2 cos<div class="frac"><span class="num">C+D</span><span class="den">2</span></div> sin<div class="frac"><span class="num">C-D</span><span class="den">2</span></div></div>
-                        <div class="formula-item">cos C + cos D = 2 cos<div class="frac"><span class="num">C+D</span><span class="den">2</span></div> cos<div class="frac"><span class="num">C-D</span><span class="den">2</span></div></div>
-                        <div class="formula-item">cos C - cos D = -2 sin<div class="frac"><span class="num">C+D</span><span class="den">2</span></div> sin<div class="frac"><span class="num">C-D</span><span class="den">2</span></div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<h2 data-hi="5. Allied / Reduction Angles" data-en="5. Allied / Reduction Angles">5. Allied / Reduction Angles</h2>
+<div class="formulas">
+<div class="formula">\(\sin(90^\circ-\theta)=\cos\theta\)</div>
+<div class="formula">\(\cos(90^\circ-\theta)=\sin\theta\)</div>
+<div class="formula">\(\tan(90^\circ-\theta)=\cot\theta\)</div>
+<div class="formula">\(\sin(90^\circ+\theta)=\cos\theta\)</div>
+<div class="formula">\(\cos(90^\circ+\theta)=-\sin\theta\)</div>
+<div class="formula">\(\tan(90^\circ+\theta)=-\cot\theta\)</div>
+<div class="formula">\(\sin(180^\circ-\theta)=\sin\theta\)</div>
+<div class="formula">\(\cos(180^\circ-\theta)=-\cos\theta\)</div>
+<div class="formula">\(\tan(180^\circ-\theta)=-\tan\theta\)</div>
+<div class="formula">\(\sin(180^\circ+\theta)=-\sin\theta\)</div>
+<div class="formula">\(\cos(180^\circ+\theta)=-\cos\theta\)</div>
+<div class="formula">\(\tan(180^\circ+\theta)=\tan\theta\)</div>
+<div class="formula">\(\sin(270^\circ-\theta)=-\cos\theta\)</div>
+<div class="formula">\(\cos(270^\circ-\theta)=-\sin\theta\)</div>
+<div class="formula">\(\tan(270^\circ-\theta)=\cot\theta\)</div>
+<div class="formula">\(\sin(270^\circ+\theta)=-\cos\theta\)</div>
+<div class="formula">\(\cos(270^\circ+\theta)=\sin\theta\)</div>
+<div class="formula">\(\tan(270^\circ+\theta)=-\cot\theta\)</div>
+<div class="formula">\(\sin(360^\circ-\theta)=-\sin\theta\)</div>
+<div class="formula">\(\cos(360^\circ-\theta)=\cos\theta\)</div>
+<div class="formula">\(\tan(360^\circ-\theta)=-\tan\theta\)</div>
+</div>
 
-        <!-- Section 8 -->
-        <h2>
-            <span class="lang-hi">7. त्रिकोणमितीय समीकरण (General Solutions - JEE)</span>
-            <span class="lang-en">7. Trigonometric Equations (JEE)</span>
-        </h2>
-        <div class="card">
-            <div class="formula-block" style="grid-template-columns: repeat(3, 1fr);">
-                <div class="formula-item">sin &theta; = 0 &nbsp;&rArr;&nbsp; &theta; = n&pi;</div>
-                <div class="formula-item">cos &theta; = 0 &nbsp;&rArr;&nbsp; &theta; = (2n+1)<div class="frac"><span class="num">&pi;</span><span class="den">2</span></div></div>
-                <div class="formula-item">tan &theta; = 0 &nbsp;&rArr;&nbsp; &theta; = n&pi;</div>
-                <div class="formula-item">sin &theta; = sin &alpha; &nbsp;&rArr;&nbsp; &theta; = n&pi; + (-1)ⁿ&alpha;</div>
-                <div class="formula-item">cos &theta; = cos &alpha; &nbsp;&rArr;&nbsp; &theta; = 2n&pi; &plusmn; &alpha;</div>
-                <div class="formula-item">tan &theta; = tan &alpha; &nbsp;&rArr;&nbsp; &theta; = n&pi; + &alpha;</div>
-                <div class="formula-item" style="grid-column: 1 / span 3;">sin²&theta; = sin²&alpha; &nbsp;&nbsp;|&nbsp;&nbsp; cos²&theta; = cos²&alpha; &nbsp;&nbsp;|&nbsp;&nbsp; tan²&theta; = tan²&alpha; &nbsp;&nbsp;&rArr;&nbsp;&nbsp; &theta; = n&pi; &plusmn; &alpha;</div>
-            </div>
-        </div>
+<h2 data-hi="6. योग और अंतर सूत्र" data-en="6. Sum & Difference Formulae">6. योग और अंतर सूत्र</h2>
+<div class="formulas">
+<div class="formula full">\(\sin(A\pm B)=\sin A\cos B\pm\cos A\sin B\)</div>
+<div class="formula full">\(\cos(A\pm B)=\cos A\cos B\mp\sin A\sin B\)</div>
+<div class="formula full">\(\tan(A\pm B)=\frac{\tan A\pm\tan B}{1\mp\tan A\tan B}\)</div>
+</div>
 
-        <!-- Section 9 -->
-        <h2>
-            <span class="lang-hi">8. प्रतिलोम त्रिकोणमितीय फलन (Inverse Trigonometry - Class 12)</span>
-            <span class="lang-en">8. Inverse Trigonometric Functions</span>
-        </h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Function</th>
-                    <th><span class="lang-hi">प्रांत</span> Domain</th>
-                    <th><span class="lang-hi">मुख्य मान परिसर</span> Principal Range</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>sin⁻¹ x</td><td class="inline-math">[-1, 1]</td><td class="inline-math">[-&pi;/2, &pi;/2]</td></tr>
-                <tr><td>cos⁻¹ x</td><td class="inline-math">[-1, 1]</td><td class="inline-math">[0, &pi;]</td></tr>
-                <tr><td>tan⁻¹ x</td><td class="inline-math">\mathbb{R}</td><td class="inline-math">(-&pi;/2, &pi;/2)</td></tr>
-            </tbody>
-        </table>
-        <div class="card" style="margin-top: 15px;">
-            <div class="formula-block" style="grid-template-columns: 1fr 1fr 1fr;">
-                <div class="formula-item">sin⁻¹(x) + cos⁻¹(x) = <div class="frac"><span class="num">&pi;</span><span class="den">2</span></div></div>
-                <div class="formula-item">tan⁻¹(x) + cot⁻¹(x) = <div class="frac"><span class="num">&pi;</span><span class="den">2</span></div></div>
-                <div class="formula-item">sec⁻¹(x) + csc⁻¹(x) = <div class="frac"><span class="num">&pi;</span><span class="den">2</span></div></div>
-                <div class="formula-item">sin⁻¹(-x) = -sin⁻¹(x)</div>
-                <div class="formula-item">cos⁻¹(-x) = &pi; - cos⁻¹(x)</div>
-                <div class="formula-item">tan⁻¹(-x) = -tan⁻¹(x)</div>
-            </div>
-        </div>
+<h2 data-hi="7. Double, Triple और Multiple Angle" data-en="7. Double, Triple & Multiple Angle">7. Double, Triple और Multiple Angle</h2>
+<div class="formulas">
+<div class="formula">\(\sin2\theta=2\sin\theta\cos\theta\)</div>
+<div class="formula">\(\cos2\theta=\cos^2\theta-\sin^2\theta\)</div>
+<div class="formula">\(\cos2\theta=2\cos^2\theta-1=1-2\sin^2\theta\)</div>
+<div class="formula">\(\tan2\theta=\frac{2\tan\theta}{1-\tan^2\theta}\)</div>
+<div class="formula">\(\sin3\theta=3\sin\theta-4\sin^3\theta\)</div>
+<div class="formula">\(\cos3\theta=4\cos^3\theta-3\cos\theta\)</div>
+<div class="formula">\(\tan3\theta=\frac{3t-t^3}{1-3t^2},\ t=\tan\theta\)</div>
+<div class="formula">\(\sin n\theta,\cos n\theta\): De Moivre / complex-number expansion</div>
+</div>
 
-        <!-- Section 10 -->
-        <h2>
-            <span class="lang-hi">9. त्रिभुज के गुण (Properties of Triangles - JEE)</span>
-            <span class="lang-en">9. Properties of Triangles (JEE)</span>
-        </h2>
-        <div class="grid-2">
-            <div class="card">
-                <h3><span class="lang-hi">ज्या नियम</span><span class="lang-en">Sine Rule</span></h3>
-                <div class="formula-block" style="grid-template-columns: 1fr;">
-                    <div class="formula-item">
-                        <div class="frac"><span class="num">a</span><span class="den">sin A</span></div> &nbsp;=&nbsp; 
-                        <div class="frac"><span class="num">b</span><span class="den">sin B</span></div> &nbsp;=&nbsp; 
-                        <div class="frac"><span class="num">c</span><span class="den">sin C</span></div> &nbsp;= 2R
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <h3><span class="lang-hi">कोज्या नियम</span><span class="lang-en">Cosine Rule</span></h3>
-                <div class="formula-block" style="grid-template-columns: 1fr;">
-                    <div class="formula-item">cos A =&nbsp; <div class="frac"><span class="num">b² + c² - a²</span><span class="den">2bc</span></div></div>
-                    <div class="formula-item">cos B =&nbsp; <div class="frac"><span class="num">a² + c² - b²</span><span class="den">2ac</span></div></div>
-                </div>
-            </div>
-        </div>
+<h2 data-hi="8. Half Angle और Power Reduction" data-en="8. Half Angle & Power Reduction">8. Half Angle और Power Reduction</h2>
+<div class="formulas">
+<div class="formula">\(\sin^2\theta=\frac{1-\cos2\theta}{2}\)</div>
+<div class="formula">\(\cos^2\theta=\frac{1+\cos2\theta}{2}\)</div>
+<div class="formula">\(\tan^2\theta=\frac{1-\cos2\theta}{1+\cos2\theta}\)</div>
+<div class="formula">\(\sin^3\theta=\frac{3\sin\theta-\sin3\theta}{4}\)</div>
+<div class="formula">\(\cos^3\theta=\frac{3\cos\theta+\cos3\theta}{4}\)</div>
+<div class="formula">\(\sin\theta\cos\theta=\frac12\sin2\theta\)</div>
+</div>
 
-    </div>
+<h2 data-hi="9. Product ↔ Sum सूत्र" data-en="9. Product ↔ Sum Formulae">9. Product ↔ Sum सूत्र</h2>
+<div class="formulas">
+<div class="formula">\(\sin A\sin B=\frac12[\cos(A-B)-\cos(A+B)]\)</div>
+<div class="formula">\(\cos A\cos B=\frac12[\cos(A-B)+\cos(A+B)]\)</div>
+<div class="formula">\(\sin A\cos B=\frac12[\sin(A+B)+\sin(A-B)]\)</div>
+<div class="formula">\(\cos A\sin B=\frac12[\sin(A+B)-\sin(A-B)]\)</div>
+<div class="formula">\(\sin A+\sin B=2\sin\frac{A+B}{2}\cos\frac{A-B}{2}\)</div>
+<div class="formula">\(\sin A-\sin B=2\cos\frac{A+B}{2}\sin\frac{A-B}{2}\)</div>
+<div class="formula">\(\cos A+\cos B=2\cos\frac{A+B}{2}\cos\frac{A-B}{2}\)</div>
+<div class="formula">\(\cos A-\cos B=-2\sin\frac{A+B}{2}\sin\frac{A-B}{2}\)</div>
+</div>
 
-    <!-- Script to Handle Languages -->
-    <script>
-        function setLang(langCode) {
-            // Remove active class from all buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
-            event.target.classList.add('active');
+<h2 data-hi="10. t = tan(θ/2) Universal Substitution" data-en="10. t = tan(θ/2) Universal Substitution">10. t = tan(θ/2) Universal Substitution</h2>
+<div class="formulas">
+<div class="formula">\(\sin\theta=\frac{2t}{1+t^2}\)</div>
+<div class="formula">\(\cos\theta=\frac{1-t^2}{1+t^2}\)</div>
+<div class="formula">\(\tan\theta=\frac{2t}{1-t^2}\)</div>
+<div class="formula">\(d\theta=\frac{2\,dt}{1+t^2}\)</div>
+</div>
 
-            // Arrays of supported language classes
-            const langs = ['.lang-hi', '.lang-en', '.lang-gu', '.lang-other'];
-            
-            langs.forEach(selector => {
-                const elements = document.querySelectorAll(selector);
-                if(selector === `.lang-${langCode}`) {
-                    elements.forEach(el => el.style.display = 'inline');
-                } else {
-                    elements.forEach(el => el.style.display = 'none');
-                }
-            });
-        }
-    </script>
+<h2 data-hi="11. Inverse Trigonometry" data-en="11. Inverse Trigonometry">11. Inverse Trigonometry</h2>
+<div class="grid2">
+<div class="card">
+<h3>Principal Values</h3>
+<table>
+<tr><th>Function</th><th>Principal Range</th></tr>
+<tr><td>\(\sin^{-1}x\)</td><td>\([-\pi/2,\pi/2]\)</td></tr>
+<tr><td>\(\cos^{-1}x\)</td><td>\([0,\pi]\)</td></tr>
+<tr><td>\(\tan^{-1}x\)</td><td>\((-\pi/2,\pi/2)\)</td></tr>
+<tr><td>\(\cot^{-1}x\)</td><td>\((0,\pi)\)</td></tr>
+<tr><td>\(\sec^{-1}x\)</td><td>\([0,\pi]\setminus\{\pi/2\}\)</td></tr>
+<tr><td>\(\csc^{-1}x\)</td><td>\([-\pi/2,\pi/2]\setminus\{0\}\)</td></tr>
+</table>
+</div>
+<div class="card">
+<h3>Important Identities</h3>
+<div class="formulas">
+<div class="formula full">\(\sin^{-1}x+\cos^{-1}x=\frac{\pi}{2}\)</div>
+<div class="formula full">\(\tan^{-1}x+\cot^{-1}x=\frac{\pi}{2}\)</div>
+<div class="formula full">\(\tan^{-1}x+\tan^{-1}y=\tan^{-1}\frac{x+y}{1-xy}\) (with principal-value conditions)</div>
+<div class="formula full">\(\tan^{-1}x-\tan^{-1}y=\tan^{-1}\frac{x-y}{1+xy}\) (with principal-value conditions)</div>
+</div>
+</div>
+</div>
+
+<h2 data-hi="12. General Trigonometric Equations" data-en="12. General Trigonometric Equations">12. General Trigonometric Equations</h2>
+<div class="formulas">
+<div class="formula">\(\sin x=\sin\alpha\Rightarrow x=n\pi+(-1)^n\alpha\)</div>
+<div class="formula">\(\cos x=\cos\alpha\Rightarrow x=2n\pi\pm\alpha\)</div>
+<div class="formula">\(\tan x=\tan\alpha\Rightarrow x=n\pi+\alpha\)</div>
+<div class="formula">\(\cot x=\cot\alpha\Rightarrow x=n\pi+\alpha\)</div>
+<div class="formula full">\(n\in\mathbb Z\)</div>
+</div>
+
+<h2 data-hi="13. Maximum / Minimum" data-en="13. Maximum / Minimum">13. Maximum / Minimum</h2>
+<div class="formulas">
+<div class="formula">\(a\sin x+b\cos x=R\sin(x+\phi)\)</div>
+<div class="formula">\(R=\sqrt{a^2+b^2}\)</div>
+<div class="formula">Maximum \(=R\), Minimum \(=-R\)</div>
+<div class="formula">\(\tan\phi=\frac{b}{a}\) (quadrant as required)</div>
+<div class="formula full">\(a\sin x+b\cos x+c\): range \([c-R,c+R]\)</div>
+</div>
+
+<h2 data-hi="14. Triangle Trigonometry" data-en="14. Triangle Trigonometry">14. Triangle Trigonometry</h2>
+<div class="formulas">
+<div class="formula">\(A+B+C=\pi\)</div>
+<div class="formula">\(\frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}=2R\)</div>
+<div class="formula full">\(a^2=b^2+c^2-2bc\cos A\)</div>
+<div class="formula full">\(b^2=c^2+a^2-2ca\cos B\)</div>
+<div class="formula full">\(c^2=a^2+b^2-2ab\cos C\)</div>
+<div class="formula">\(\Delta=\frac12ab\sin C\)</div>
+<div class="formula">\(\Delta=\frac{abc}{4R}\)</div>
+<div class="formula">\(\Delta=rs\)</div>
+<div class="formula">\(s=\frac{a+b+c}{2}\)</div>
+<div class="formula">\(\Delta=\sqrt{s(s-a)(s-b)(s-c)}\)</div>
+<div class="formula">\(r=\frac{\Delta}{s}\)</div>
+<div class="formula">\(R=\frac{abc}{4\Delta}\)</div>
+</div>
+
+<h2 data-hi="15. Degree ↔ Radian" data-en="15. Degree ↔ Radian">15. Degree ↔ Radian</h2>
+<div class="formulas">
+<div class="formula">\(\pi\text{ rad}=180^\circ\)</div>
+<div class="formula">\(1^\circ=\frac{\pi}{180}\text{ rad}\)</div>
+<div class="formula">\(1\text{ rad}=\frac{180^\circ}{\pi}\)</div>
+<div class="formula">\(r=\frac{\pi\theta^\circ}{180^\circ}\)</div>
+</div>
+
+<h2 data-hi="16. Graph / Period नियम" data-en="16. Graph / Period Rules">16. Graph / Period Rules</h2>
+<div class="formulas">
+<div class="formula">\(y=A\sin(Bx+C)+D\): Amplitude \(=|A|\)</div>
+<div class="formula">Period \(=\frac{2\pi}{|B|}\)</div>
+<div class="formula">\(y=A\cos(Bx+C)+D\): Amplitude \(=|A|\)</div>
+<div class="formula">\(y=A\tan(Bx+C)+D\): Period \(=\frac{\pi}{|B|}\)</div>
+<div class="formula full">Phase shift \(=-\frac{C}{B}\), vertical shift \(=D\)</div>
+</div>
+
+
+<h2 data-hi="17. 0° से 360° तक सम्पूर्ण Exact-Value Table" data-en="17. Complete Exact-Value Table: 0° to 360°">17. 0° से 360° तक सम्पूर्ण Exact-Value Table</h2>
+<div class="card"><table>
+<tr><th>θ</th><th>sin θ</th><th>cos θ</th><th>tan θ</th></tr>
+<tr><td>0°</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>15°</td><td>\(\frac{\sqrt6-\sqrt2}{4}\)</td><td>\(\frac{\sqrt6+\sqrt2}{4}\)</td><td>\(2-\sqrt3\)</td></tr>
+<tr><td>30°</td><td>\(\frac12\)</td><td>\(\frac{\sqrt3}{2}\)</td><td>\(\frac1{\sqrt3}\)</td></tr>
+<tr><td>45°</td><td>\(\frac1{\sqrt2}\)</td><td>\(\frac1{\sqrt2}\)</td><td>1</td></tr>
+<tr><td>60°</td><td>\(\frac{\sqrt3}{2}\)</td><td>\(\frac12\)</td><td>\(\sqrt3\)</td></tr>
+<tr><td>75°</td><td>\(\frac{\sqrt6+\sqrt2}{4}\)</td><td>\(\frac{\sqrt6-\sqrt2}{4}\)</td><td>\(2+\sqrt3\)</td></tr>
+<tr><td>90°</td><td>1</td><td>0</td><td>undefined</td></tr>
+<tr><td>105°</td><td>\(\frac{\sqrt6+\sqrt2}{4}\)</td><td>\(-\frac{\sqrt6-\sqrt2}{4}\)</td><td>\(-(2+\sqrt3)\)</td></tr>
+<tr><td>120°</td><td>\(\frac{\sqrt3}{2}\)</td><td>\(-\frac12\)</td><td>\(-\sqrt3\)</td></tr>
+<tr><td>135°</td><td>\(\frac1{\sqrt2}\)</td><td>\(-\frac1{\sqrt2}\)</td><td>-1</td></tr>
+<tr><td>150°</td><td>\(\frac12\)</td><td>\(-\frac{\sqrt3}{2}\)</td><td>\(-\frac1{\sqrt3}\)</td></tr>
+<tr><td>165°</td><td>\(\frac{\sqrt6-\sqrt2}{4}\)</td><td>\(-\frac{\sqrt6+\sqrt2}{4}\)</td><td>\(-(2-\sqrt3)\)</td></tr>
+<tr><td>180°</td><td>0</td><td>-1</td><td>0</td></tr>
+<tr><td>195°</td><td>\(-\frac{\sqrt6-\sqrt2}{4}\)</td><td>\(-\frac{\sqrt6+\sqrt2}{4}\)</td><td>\(2-\sqrt3\)</td></tr>
+<tr><td>210°</td><td>\(-\frac12\)</td><td>\(-\frac{\sqrt3}{2}\)</td><td>\(\frac1{\sqrt3}\)</td></tr>
+<tr><td>225°</td><td>\(-\frac1{\sqrt2}\)</td><td>\(-\frac1{\sqrt2}\)</td><td>1</td></tr>
+<tr><td>240°</td><td>\(-\frac{\sqrt3}{2}\)</td><td>\(-\frac12\)</td><td>\(\sqrt3\)</td></tr>
+<tr><td>255°</td><td>\(-\frac{\sqrt6+\sqrt2}{4}\)</td><td>\(-\frac{\sqrt6-\sqrt2}{4}\)</td><td>\(2+\sqrt3\)</td></tr>
+<tr><td>270°</td><td>-1</td><td>0</td><td>undefined</td></tr>
+<tr><td>285°</td><td>\(-\frac{\sqrt6+\sqrt2}{4}\)</td><td>\(\frac{\sqrt6-\sqrt2}{4}\)</td><td>\(-(2+\sqrt3)\)</td></tr>
+<tr><td>300°</td><td>\(-\frac{\sqrt3}{2}\)</td><td>\(\frac12\)</td><td>\(-\sqrt3\)</td></tr>
+<tr><td>315°</td><td>\(-\frac1{\sqrt2}\)</td><td>\(\frac1{\sqrt2}\)</td><td>-1</td></tr>
+<tr><td>330°</td><td>\(-\frac12\)</td><td>\(\frac{\sqrt3}{2}\)</td><td>\(-\frac1{\sqrt3}\)</td></tr>
+<tr><td>345°</td><td>\(-\frac{\sqrt6-\sqrt2}{4}\)</td><td>\(\frac{\sqrt6+\sqrt2}{4}\)</td><td>\(-(2-\sqrt3)\)</td></tr>
+<tr><td>360°</td><td>0</td><td>1</td><td>0</td></tr>
+</table></div>
+
+<h2 data-hi="18. JEE Special Angles" data-en="18. JEE Special Angles">18. JEE Special Angles</h2>
+<div class="card"><table>
+<tr><th>θ</th><th>sin θ</th><th>cos θ</th><th>tan θ</th></tr>
+<tr><td>18°</td><td>\(\frac{\sqrt5-1}{4}\)</td><td>\(\frac{\sqrt{10+2\sqrt5}}{4}\)</td><td>\(\frac1{\sqrt{5+2\sqrt5}}\)</td></tr>
+<tr><td>36°</td><td>\(\frac{\sqrt{10-2\sqrt5}}{4}\)</td><td>\(\frac{\sqrt5+1}{4}\)</td><td>\(\sqrt{5-2\sqrt5}\)</td></tr>
+<tr><td>54°</td><td>\(\frac{\sqrt5+1}{4}\)</td><td>\(\frac{\sqrt{10-2\sqrt5}}{4}\)</td><td>\(\sqrt{5+2\sqrt5}\)</td></tr>
+<tr><td>72°</td><td>\(\frac{\sqrt{10+2\sqrt5}}{4}\)</td><td>\(\frac{\sqrt5-1}{4}\)</td><td>\(\sqrt{5+2\sqrt5}\)</td></tr>
+<tr><td>15°</td><td>\(\frac{\sqrt6-\sqrt2}{4}\)</td><td>\(\frac{\sqrt6+\sqrt2}{4}\)</td><td>\(2-\sqrt3\)</td></tr>
+<tr><td>75°</td><td>\(\frac{\sqrt6+\sqrt2}{4}\)</td><td>\(\frac{\sqrt6-\sqrt2}{4}\)</td><td>\(2+\sqrt3\)</td></tr>
+<tr><td>22.5°</td><td>\(\frac{\sqrt{2-\sqrt2}}2\)</td><td>\(\frac{\sqrt{2+\sqrt2}}2\)</td><td>\(\sqrt2-1\)</td></tr>
+<tr><td>67.5°</td><td>\(\frac{\sqrt{2+\sqrt2}}2\)</td><td>\(\frac{\sqrt{2-\sqrt2}}2\)</td><td>\(\sqrt2+1\)</td></tr>
+</table>
+<div class="note small"><b>JEE:</b> 18°, 36°, 54°, 72° pentagon / golden-ratio based questions में बहुत useful हैं।</div>
+</div>
+
+<h2 data-hi="19. Complete Formula-Type Checklist — Class 12 + JEE Main + Advanced" data-en="19. Complete Formula-Type Checklist — Class 12 + JEE Main + Advanced">19. Complete Formula-Type Checklist — Class 12 + JEE Main + Advanced</h2>
+<div class="grid2">
+<div class="card"><h3>Core</h3><div class="formulas">
+<div class="formula">Definitions + reciprocal/quotient identities</div><div class="formula">Pythagorean identities</div>
+<div class="formula">Signs + quadrants</div><div class="formula">Domain, range, period</div>
+<div class="formula">Standard & special-angle values</div><div class="formula">Allied / reduction angles</div>
+</div></div>
+<div class="card"><h3>Identity / Transformation</h3><div class="formulas">
+<div class="formula">A ± B</div><div class="formula">Double angle</div><div class="formula">Triple angle</div>
+<div class="formula">Half angle</div><div class="formula">Power reduction</div><div class="formula">Product ↔ Sum</div>
+<div class="formula">t = tan(θ/2)</div><div class="formula">Factorisation</div>
+</div></div>
+<div class="card"><h3>Equations</h3><div class="formulas">
+<div class="formula">General solutions</div><div class="formula">Trig inequalities</div>
+<div class="formula">Number of solutions</div><div class="formula">Parameter-based equations</div>
+<div class="formula">Homogeneous equations</div><div class="formula">Multiple-angle equations</div>
+</div></div>
+<div class="card"><h3>JEE Advanced</h3><div class="formulas">
+<div class="formula">Auxiliary-angle method</div><div class="formula">R-form: a sin x + b cos x</div>
+<div class="formula">Maximum / Minimum</div><div class="formula">Inverse-trig compositions</div>
+<div class="formula">Triangle identities</div><div class="formula">Complex-number / De Moivre connection</div>
+</div></div>
+</div>
+
+
+<h2 data-hi="20. Complete JEE + Class 12 Formula Bank — जो कुछ भी काम आता है"
+    data-en="20. Complete JEE + Class 12 Formula Bank — Essential Remaining Formulae">
+20. Complete JEE + Class 12 Formula Bank — जो कुछ भी काम आता है
+</h2>
+
+<div class="grid2">
+<div class="card">
+<h3>🔹 Basic + Reciprocal + Quotient</h3>
+<div class="formulas">
+<div class="formula">\(\sin\theta=\frac{\text{P}}{\text{H}},\quad \cos\theta=\frac{\text{B}}{\text{H}},\quad \tan\theta=\frac{\text{P}}{\text{B}}\)</div>
+<div class="formula">\(\cot\theta=\frac1{\tan\theta},\quad \sec\theta=\frac1{\cos\theta},\quad \csc\theta=\frac1{\sin\theta}\)</div>
+<div class="formula">\(\tan\theta=\frac{\sin\theta}{\cos\theta},\quad \cot\theta=\frac{\cos\theta}{\sin\theta}\)</div>
+<div class="formula">\(\sin^2\theta+\cos^2\theta=1\)</div>
+<div class="formula">\(\sec^2\theta-\tan^2\theta=1\)</div>
+<div class="formula">\(\csc^2\theta-\cot^2\theta=1\)</div>
+</div>
+</div>
+
+<div class="card">
+<h3>🔹 Complementary / Allied / Quadrant</h3>
+<div class="formulas">
+<div class="formula">\(\sin(90^\circ-\theta)=\cos\theta\)</div>
+<div class="formula">\(\cos(90^\circ-\theta)=\sin\theta\)</div>
+<div class="formula">\(\tan(90^\circ-\theta)=\cot\theta\)</div>
+<div class="formula">\(\sin(180^\circ-\theta)=\sin\theta\)</div>
+<div class="formula">\(\cos(180^\circ-\theta)=-\cos\theta\)</div>
+<div class="formula">\(\tan(180^\circ-\theta)=-\tan\theta\)</div>
+<div class="formula">\(\sin(360^\circ-\theta)=-\sin\theta\)</div>
+<div class="formula">\(\cos(360^\circ-\theta)=\cos\theta\)</div>
+</div>
+</div>
+
+<div class="card">
+<h3>🔹 Sum / Difference — All Useful Forms</h3>
+<div class="formulas">
+<div class="formula">\(\sin(A+B)=\sin A\cos B+\cos A\sin B\)</div>
+<div class="formula">\(\sin(A-B)=\sin A\cos B-\cos A\sin B\)</div>
+<div class="formula">\(\cos(A+B)=\cos A\cos B-\sin A\sin B\)</div>
+<div class="formula">\(\cos(A-B)=\cos A\cos B+\sin A\sin B\)</div>
+<div class="formula">\(\tan(A+B)=\frac{\tan A+\tan B}{1-\tan A\tan B}\)</div>
+<div class="formula">\(\tan(A-B)=\frac{\tan A-\tan B}{1+\tan A\tan B}\)</div>
+</div>
+</div>
+
+<div class="card">
+<h3>🔹 Double / Triple / Quadruple</h3>
+<div class="formulas">
+<div class="formula">\(\sin2A=2\sin A\cos A\)</div>
+<div class="formula">\(\cos2A=1-2\sin^2A=2\cos^2A-1\)</div>
+<div class="formula">\(\tan2A=\frac{2\tan A}{1-\tan^2A}\)</div>
+<div class="formula">\(\sin3A=3\sin A-4\sin^3A\)</div>
+<div class="formula">\(\cos3A=4\cos^3A-3\cos A\)</div>
+<div class="formula">\(\tan3A=\frac{3t-t^3}{1-3t^2},\ t=\tan A\)</div>
+<div class="formula">\(\cos4A=8\cos^4A-8\cos^2A+1\)</div>
+<div class="formula">\(\sin4A=4\sin A\cos A(\cos^2A-\sin^2A)\)</div>
+</div>
+</div>
+
+<div class="card">
+<h3>🔹 Half Angle / Sub-multiple</h3>
+<div class="formulas">
+<div class="formula">\(\sin\frac A2=\pm\sqrt{\frac{1-\cos A}{2}}\)</div>
+<div class="formula">\(\cos\frac A2=\pm\sqrt{\frac{1+\cos A}{2}}\)</div>
+<div class="formula">\(\tan\frac A2=\pm\sqrt{\frac{1-\cos A}{1+\cos A}}\)</div>
+<div class="formula">\(\tan\frac A2=\frac{\sin A}{1+\cos A}=\frac{1-\cos A}{\sin A}\)</div>
+</div>
+</div>
+
+<div class="card">
+<h3>🔹 Power Reduction / Powers</h3>
+<div class="formulas">
+<div class="formula">\(\sin^2A=\frac{1-\cos2A}{2}\)</div>
+<div class="formula">\(\cos^2A=\frac{1+\cos2A}{2}\)</div>
+<div class="formula">\(\sin A\cos A=\frac12\sin2A\)</div>
+<div class="formula">\(\sin^3A=\frac{3\sin A-\sin3A}{4}\)</div>
+<div class="formula">\(\cos^3A=\frac{3\cos A+\cos3A}{4}\)</div>
+<div class="formula">\(\sin^4A=\frac{3-4\cos2A+\cos4A}{8}\)</div>
+<div class="formula">\(\cos^4A=\frac{3+4\cos2A+\cos4A}{8}\)</div>
+</div>
+</div>
+
+<div class="card">
+<h3>🔹 Product ↔ Sum / Difference</h3>
+<div class="formulas">
+<div class="formula">\(\sin A\sin B=\frac12[\cos(A-B)-\cos(A+B)]\)</div>
+<div class="formula">\(\cos A\cos B=\frac12[\cos(A-B)+\cos(A+B)]\)</div>
+<div class="formula">\(\sin A\cos B=\frac12[\sin(A+B)+\sin(A-B)]\)</div>
+<div class="formula">\(\sin A+\sin B=2\sin\frac{A+B}{2}\cos\frac{A-B}{2}\)</div>
+<div class="formula">\(\sin A-\sin B=2\cos\frac{A+B}{2}\sin\frac{A-B}{2}\)</div>
+<div class="formula">\(\cos A+\cos B=2\cos\frac{A+B}{2}\cos\frac{A-B}{2}\)</div>
+<div class="formula">\(\cos A-\cos B=-2\sin\frac{A+B}{2}\sin\frac{A-B}{2}\)</div>
+</div>
+</div>
+
+<div class="card">
+<h3>🔹 General Equations</h3>
+<div class="formulas">
+<div class="formula">\(\sin x=\sin\alpha\Rightarrow x=n\pi+(-1)^n\alpha\)</div>
+<div class="formula">\(\cos x=\cos\alpha\Rightarrow x=2n\pi\pm\alpha\)</div>
+<div class="formula">\(\tan x=\tan\alpha\Rightarrow x=n\pi+\alpha\)</div>
+<div class="formula">\(\cot x=\cot\alpha\Rightarrow x=n\pi+\alpha\)</div>
+<div class="formula">\(\sin x=0\Rightarrow x=n\pi\)</div>
+<div class="formula">\(\cos x=0\Rightarrow x=\frac{(2n+1)\pi}{2}\)</div>
+<div class="formula">\(\tan x=0\Rightarrow x=n\pi\)</div>
+<div class="formula">\(n\in\mathbb Z\)</div>
+</div>
+</div>
+
+<div class="card">
+<h3>🔹 Transformation / Factorisation</h3>
+<div class="formulas">
+<div class="formula">\(\sin^2A-\sin^2B=\sin(A+B)\sin(A-B)\)</div>
+<div class="formula">\(\cos^2A-\cos^2B=-\sin(A+B)\sin(A-B)\)</div>
+<div class="formula">\(\sin A\cos B+\cos A\sin B=\sin(A+B)\)</div>
+<div class="formula">\(\sin A\cos B-\cos A\sin B=\sin(A-B)\)</div>
+<div class="formula">\(\cos A\cos B-\sin A\sin B=\cos(A+B)\)</div>
+<div class="formula">\(\cos A\cos B+\sin A\sin B=\cos(A-B)\)</div>
+<div class="formula">\(\sin3A=4\sin A\sin(60^\circ+A)\sin(60^\circ-A)\)</div>
+<div class="formula">\(\cos3A=4\cos A\cos(60^\circ+A)\cos(60^\circ-A)\)</div>
+</div>
+</div>
+
+<div class="card">
+<h3>🔹 R-form / Maximum-Minimum</h3>
+<div class="formulas">
+<div class="formula">\(a\sin x+b\cos x=R\sin(x+\phi)\)</div>
+<div class="formula">\(R=\sqrt{a^2+b^2}\)</div>
+<div class="formula">\(\cos\phi=\frac aR,\quad \sin\phi=\frac bR\)</div>
+<div class="formula">\(-R\le a\sin x+b\cos x\le R\)</div>
+<div class="formula">Range of \(a\sin x+b\cos x+c=[c-R,c+R]\)</div>
+</div>
+</div>
+
+<div class="card">
+<h3>🔹 Trigonometric Inequalities</h3>
+<div class="formulas">
+<div class="formula">\(-1\le\sin x\le1\)</div>
+<div class="formula">\(-1\le\cos x\le1\)</div>
+<div class="formula">\(\tan x\) has no finite upper/lower bound</div>
+<div class="formula">Use unit-circle sign + period to solve interval inequalities</div>
+<div class="formula">For \(a\sin x+b\cos x\), first convert to R-form</div>
+</div>
+</div>
+
+<div class="card">
+<h3>🔹 Number of Solutions</h3>
+<div class="formulas">
+<div class="formula">\(\sin x=k\) has solutions iff \(|k|\le1\)</div>
+<div class="formula">\(\cos x=k\) has solutions iff \(|k|\le1\)</div>
+<div class="formula">\(\tan x=k\) has one solution in every interval of length \(\pi\)</div>
+<div class="formula">Always intersect the general solution with the asked interval</div>
+</div>
+</div>
+
+<div class="card">
+<h3>🔹 Universal Substitution</h3>
+<div class="formulas">
+<div class="formula">\(t=\tan\frac x2\)</div>
+<div class="formula">\(\sin x=\frac{2t}{1+t^2}\)</div>
+<div class="formula">\(\cos x=\frac{1-t^2}{1+t^2}\)</div>
+<div class="formula">\(\tan x=\frac{2t}{1-t^2}\)</div>
+<div class="formula">\(dx=\frac{2\,dt}{1+t^2}\)</div>
+</div>
+</div>
+
+<div class="card">
+<h3>🔹 Inverse Trigonometry</h3>
+<div class="formulas">
+<div class="formula">\(\sin^{-1}x+\cos^{-1}x=\frac\pi2\)</div>
+<div class="formula">\(\tan^{-1}x+\cot^{-1}x=\frac\pi2\)</div>
+<div class="formula">\(\tan^{-1}x+\tan^{-1}y=\tan^{-1}\frac{x+y}{1-xy}\) (principal-value conditions)</div>
+<div class="formula">\(\tan^{-1}x-\tan^{-1}y=\tan^{-1}\frac{x-y}{1+xy}\) (principal-value conditions)</div>
+<div class="formula">\(\tan^{-1}x=\frac12\sin^{-1}\frac{2x}{1+x^2}\) for \(x\ge0\)</div>
+</div>
+</div>
+
+<div class="card">
+<h3>🔹 Triangle Trigonometry</h3>
+<div class="formulas">
+<div class="formula">\(A+B+C=\pi\)</div>
+<div class="formula">\(\frac a{\sin A}=\frac b{\sin B}=\frac c{\sin C}=2R\)</div>
+<div class="formula">\(a^2=b^2+c^2-2bc\cos A\)</div>
+<div class="formula">\(\Delta=\frac12bc\sin A=\frac{abc}{4R}=rs\)</div>
+<div class="formula">\(s=\frac{a+b+c}{2}\)</div>
+<div class="formula">\(\Delta=\sqrt{s(s-a)(s-b)(s-c)}\)</div>
+<div class="formula">\(r=\frac{\Delta}{s},\quad R=\frac{abc}{4\Delta}\)</div>
+<div class="formula">\(\sin\frac A2=\sqrt{\frac{(s-b)(s-c)}{bc}}\)</div>
+<div class="formula">\(\cos\frac A2=\sqrt{\frac{s(s-a)}{bc}}\)</div>
+</div>
+</div>
+
+<div class="card">
+<h3>🔹 Advanced Triangle Identities</h3>
+<div class="formulas">
+<div class="formula">\(\cos A+\cos B+\cos C=1+\frac rR\)</div>
+<div class="formula">\(\sin^2\frac A2+\sin^2\frac B2+\sin^2\frac C2=2-\frac rR\)</div>
+<div class="formula">\(\cos^2\frac A2+\cos^2\frac B2+\cos^2\frac C2=1+\frac rR\)</div>
+<div class="formula">\(\cos A+\cos B=2\cos\frac{A+B}{2}\cos\frac{A-B}{2}\)</div>
+</div>
+</div>
+
+<div class="card">
+<h3>🔹 Complex Numbers / De Moivre Connection</h3>
+<div class="formulas">
+<div class="formula">\(\cos\theta+i\sin\theta=e^{i\theta}\)</div>
+<div class="formula">\((\cos\theta+i\sin\theta)^n=\cos n\theta+i\sin n\theta\)</div>
+<div class="formula">\(\cos n\theta=\Re[(\cos\theta+i\sin\theta)^n]\)</div>
+<div class="formula">\(\sin n\theta=\Im[(\cos\theta+i\sin\theta)^n]\)</div>
+</div>
+</div>
+
+<div class="card">
+<h3>🔹 Graph / Period / Amplitude</h3>
+<div class="formulas">
+<div class="formula">\(y=a\sin(bx+c)+d\)</div>
+<div class="formula">Amplitude \(=|a|\)</div>
+<div class="formula">Period \(=\frac{2\pi}{|b|}\)</div>
+<div class="formula">Phase shift \(=-\frac cb\)</div>
+<div class="formula">Vertical shift \(=d\)</div>
+<div class="formula">For tan: Period \(=\frac{\pi}{|b|}\)</div>
+</div>
+</div>
+
+<div class="card">
+<h3>🔹 Degree / Radian + Arc</h3>
+<div class="formulas">
+<div class="formula">\(180^\circ=\pi\text{ rad}\)</div>
+<div class="formula">\(\theta_{\rm rad}=\theta^\circ\frac{\pi}{180}\)</div>
+<div class="formula">\(s=r\theta\) (θ in radians)</div>
+<div class="formula">Sector area \(=\frac12r^2\theta\)</div>
+</div>
+</div>
+</div>
+
+<h2 data-hi="21. JEE में बार-बार काम आने वाले Special Results"
+    data-en="21. Frequently Used JEE Special Results">
+21. JEE में बार-बार काम आने वाले Special Results
+</h2>
+<div class="formulas">
+<div class="formula">\(\sin18^\circ=\frac{\sqrt5-1}{4}\)</div>
+<div class="formula">\(\cos36^\circ=\frac{\sqrt5+1}{4}\)</div>
+<div class="formula">\(\sin54^\circ=\cos36^\circ\)</div>
+<div class="formula">\(\cos72^\circ=\sin18^\circ\)</div>
+<div class="formula">\(\tan18^\circ=\frac1{\sqrt{5+2\sqrt5}}\)</div>
+<div class="formula">\(\tan36^\circ=\sqrt{5-2\sqrt5}\)</div>
+<div class="formula">\(\tan54^\circ=\sqrt{5+2\sqrt5}\)</div>
+<div class="formula">\(\tan72^\circ=\sqrt{5+2\sqrt5}\)</div>
+<div class="formula">\(\sin15^\circ=\frac{\sqrt6-\sqrt2}{4}\)</div>
+<div class="formula">\(\cos15^\circ=\frac{\sqrt6+\sqrt2}{4}\)</div>
+<div class="formula">\(\sin75^\circ=\frac{\sqrt6+\sqrt2}{4}\)</div>
+<div class="formula">\(\cos75^\circ=\frac{\sqrt6-\sqrt2}{4}\)</div>
+</div>
+
+<div class="note small" data-hi="नोट: यह शीट Class 12, JEE Main और JEE Advanced के प्रमुख त्रिकोणमिति सूत्रों को एक जगह व्यवस्थित करती है।"
+data-en="Note: This sheet organizes the major Class 12, JEE Main and JEE Advanced trigonometry formulae in one place.">
+नोट: यह शीट Class 12, JEE Main और JEE Advanced के प्रमुख त्रिकोणमिति सूत्रों को एक जगह व्यवस्थित करती है।
+</div>
+</main>
+
+<script>
+const names={
+hi:["हिन्दी","PDF / प्रिंट"],en:["English","PDF / Print"],gu:["ગુજરાતી","PDF / પ્રિન્ટ"],
+mr:["मराठी","PDF / प्रिंट"],bn:["বাংলা","PDF / প্রিন্ট"],ta:["தமிழ்","PDF / Print"],
+te:["తెలుగు","PDF / Print"],kn:["ಕನ್ನಡ","PDF / Print"],ml:["മലയാളം","PDF / Print"],
+pa:["ਪੰਜਾਬੀ","PDF / Print"],or:["ଓଡ଼ିଆ","PDF / Print"],as:["অসমীয়া","PDF / Print"],ur:["اردو","PDF / Print"]
+};
+function toggleLang(){document.getElementById("langMenu").classList.toggle("open")}
+document.addEventListener("click",e=>{
+ const w=document.querySelector(".lang-wrap");
+ if(w&&!w.contains(e.target))document.getElementById("langMenu").classList.remove("open");
+});
+function setLang(lang){
+ document.documentElement.lang=lang;
+ document.getElementById("langName").textContent=names[lang][0];
+ document.querySelectorAll("[data-hi][data-en]").forEach(el=>{
+   el.textContent=(lang==="hi")?el.dataset.hi:el.dataset.en;
+ });
+ document.getElementById("langMenu").classList.remove("open");
+ if(window.MathJax) MathJax.typesetPromise();
+}
+</script>
+
+<script>
+function downloadHTML(){
+  const clone = document.documentElement.cloneNode(true);
+  clone.querySelectorAll('.no-print').forEach(el => el.remove());
+  const blob = new Blob(
+    ['<!DOCTYPE html>\n' + clone.outerHTML],
+    {type:'text/html;charset=utf-8'}
+  );
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'Trigonometry_Formula_Sheet_RBSE_JEE.html';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+</script>
+
 </body>
 </html>
